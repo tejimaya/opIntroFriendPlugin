@@ -270,6 +270,17 @@ abstract class BaseIntroEssay extends BaseObject  implements Persistent {
 	
 	public function delete(PropelPDO $con = null)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssay:delete:pre') as $callable)
+    {
+      $ret = call_user_func($callable, $this, $con);
+      if ($ret)
+      {
+        return;
+      }
+    }
+
+
 		if ($this->isDeleted()) {
 			throw new PropelException("This object has already been deleted.");
 		}
@@ -287,11 +298,28 @@ abstract class BaseIntroEssay extends BaseObject  implements Persistent {
 			$con->rollBack();
 			throw $e;
 		}
-	}
+	
 
+    foreach (sfMixer::getCallables('BaseIntroEssay:delete:post') as $callable)
+    {
+      call_user_func($callable, $this, $con);
+    }
+
+  }
 	
 	public function save(PropelPDO $con = null)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssay:save:pre') as $callable)
+    {
+      $affectedRows = call_user_func($callable, $this, $con);
+      if (is_int($affectedRows))
+      {
+        return $affectedRows;
+      }
+    }
+
+
     if ($this->isModified() && !$this->isColumnModified(IntroEssayPeer::UPDATED_AT))
     {
       $this->setUpdatedAt(time());
@@ -309,6 +337,11 @@ abstract class BaseIntroEssay extends BaseObject  implements Persistent {
 		try {
 			$affectedRows = $this->doSave($con);
 			$con->commit();
+    foreach (sfMixer::getCallables('BaseIntroEssay:save:post') as $callable)
+    {
+      call_user_func($callable, $this, $con, $affectedRows);
+    }
+
 			IntroEssayPeer::addInstanceToPool($this);
 			return $affectedRows;
 		} catch (PropelException $e) {
@@ -645,5 +678,19 @@ abstract class BaseIntroEssay extends BaseObject  implements Persistent {
 			$this->aMemberRelatedByFromId = null;
 			$this->aMemberRelatedByToId = null;
 	}
+
+
+  public function __call($method, $arguments)
+  {
+    if (!$callable = sfMixer::getCallable('BaseIntroEssay:'.$method))
+    {
+      throw new sfException(sprintf('Call to undefined method BaseIntroEssay::%s', $method));
+    }
+
+    array_unshift($arguments, $this);
+
+    return call_user_func_array($callable, $arguments);
+  }
+
 
 } 

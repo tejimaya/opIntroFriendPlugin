@@ -128,6 +128,13 @@ abstract class BaseIntroEssayPeer {
 			$con = Propel::getConnection(IntroEssayPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doCount:doCount') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $criteria, $con);
+    }
+
+
 				$stmt = BasePeer::doCount($criteria, $con);
 
 		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -156,6 +163,13 @@ abstract class BaseIntroEssayPeer {
 	
 	public static function doSelectStmt(Criteria $criteria, PropelPDO $con = null)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doSelectStmt:doSelectStmt') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $criteria, $con);
+    }
+
+
 		if ($con === null) {
 			$con = Propel::getConnection(IntroEssayPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
@@ -266,6 +280,13 @@ abstract class BaseIntroEssayPeer {
 
 		$criteria->addJoin(array(IntroEssayPeer::FROM_ID,), array(MemberPeer::ID,), $join_behavior);
 
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doCount:doCount') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $criteria, $con);
+    }
+
+
 		$stmt = BasePeer::doCount($criteria, $con);
 
 		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -301,6 +322,13 @@ abstract class BaseIntroEssayPeer {
 
 		$criteria->addJoin(array(IntroEssayPeer::TO_ID,), array(MemberPeer::ID,), $join_behavior);
 
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doCount:doCount') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $criteria, $con);
+    }
+
+
 		$stmt = BasePeer::doCount($criteria, $con);
 
 		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -315,6 +343,13 @@ abstract class BaseIntroEssayPeer {
 	
 	public static function doSelectJoinMemberRelatedByFromId(Criteria $c, $con = null, $join_behavior = Criteria::LEFT_JOIN)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doSelectJoin:doSelectJoin') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $c, $con);
+    }
+
+
 		$c = clone $c;
 
 				if ($c->getDbName() == Propel::getDefaultDB()) {
@@ -438,6 +473,13 @@ abstract class BaseIntroEssayPeer {
 
 		$criteria->addJoin(array(IntroEssayPeer::FROM_ID,), array(MemberPeer::ID,), $join_behavior);
 		$criteria->addJoin(array(IntroEssayPeer::TO_ID,), array(MemberPeer::ID,), $join_behavior);
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doCount:doCount') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $criteria, $con);
+    }
+
+
 		$stmt = BasePeer::doCount($criteria, $con);
 
 		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -451,6 +493,13 @@ abstract class BaseIntroEssayPeer {
 	
 	public static function doSelectJoinAll(Criteria $c, $con = null, $join_behavior = Criteria::LEFT_JOIN)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doSelectJoinAll:doSelectJoinAll') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $c, $con);
+    }
+
+
 		$c = clone $c;
 
 				if ($c->getDbName() == Propel::getDefaultDB()) {
@@ -541,6 +590,13 @@ abstract class BaseIntroEssayPeer {
 			$con = Propel::getConnection(IntroEssayPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 	
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doCount:doCount') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $criteria, $con);
+    }
+
+
 		$stmt = BasePeer::doCount($criteria, $con);
 
 		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -572,6 +628,13 @@ abstract class BaseIntroEssayPeer {
 			$con = Propel::getConnection(IntroEssayPeer::DATABASE_NAME, Propel::CONNECTION_READ);
 		}
 	
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doCount:doCount') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $criteria, $con);
+    }
+
+
 		$stmt = BasePeer::doCount($criteria, $con);
 
 		if ($row = $stmt->fetch(PDO::FETCH_NUM)) {
@@ -586,6 +649,13 @@ abstract class BaseIntroEssayPeer {
 	
 	public static function doSelectJoinAllExceptMemberRelatedByFromId(Criteria $c, $con = null, $join_behavior = Criteria::LEFT_JOIN)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doSelectJoinAllExcept:doSelectJoinAllExcept') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $c, $con);
+    }
+
+
 		$c = clone $c;
 
 								if ($c->getDbName() == Propel::getDefaultDB()) {
@@ -670,6 +740,17 @@ abstract class BaseIntroEssayPeer {
 	
 	public static function doInsert($values, PropelPDO $con = null)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doInsert:pre') as $callable)
+    {
+      $ret = call_user_func($callable, 'BaseIntroEssayPeer', $values, $con);
+      if (false !== $ret)
+      {
+        return $ret;
+      }
+    }
+
+
 		if ($con === null) {
 			$con = Propel::getConnection(IntroEssayPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
@@ -694,12 +775,29 @@ abstract class BaseIntroEssayPeer {
 			throw $e;
 		}
 
-		return $pk;
+		
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doInsert:post') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $values, $con, $pk);
+    }
+
+    return $pk;
 	}
 
 	
 	public static function doUpdate($values, PropelPDO $con = null)
 	{
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doUpdate:pre') as $callable)
+    {
+      $ret = call_user_func($callable, 'BaseIntroEssayPeer', $values, $con);
+      if (false !== $ret)
+      {
+        return $ret;
+      }
+    }
+
+
 		if ($con === null) {
 			$con = Propel::getConnection(IntroEssayPeer::DATABASE_NAME, Propel::CONNECTION_WRITE);
 		}
@@ -715,8 +813,16 @@ abstract class BaseIntroEssayPeer {
 
 				$criteria->setDbName(self::DATABASE_NAME);
 
-		return BasePeer::doUpdate($selectCriteria, $criteria, $con);
-	}
+		$ret = BasePeer::doUpdate($selectCriteria, $criteria, $con);
+	
+
+    foreach (sfMixer::getCallables('BaseIntroEssayPeer:doUpdate:post') as $callable)
+    {
+      call_user_func($callable, 'BaseIntroEssayPeer', $values, $con, $ret);
+    }
+
+    return $ret;
+  }
 
 	
 	public static function doDeleteAll($con = null)

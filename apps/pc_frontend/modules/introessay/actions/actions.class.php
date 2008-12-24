@@ -46,11 +46,17 @@ class introessayActions extends sfActions
     return sfView::INPUT;
   }
 
+  public function executeDeleteInfo($request)
+  {
+    $this->id = $request->getParameter('id');
+  }
+
   public function executeDelete($request)
   {
     $this->id = $request->getParameter('id'); 
     $this->introEssay = IntroEssayPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
     $this->delete();
+    redirect("member/?id=" . $this->id);
   }
 
   public function executeShow($request)
