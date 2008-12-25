@@ -1,6 +1,7 @@
-<?php include_box( 'writeform', '紹介文を作成する', '', array(
-  'form' => array($form),
-  'url' => 'introessay/index?id=' . $id,
-  'button' => '作成'
-)) ?>
+<?php include_page_title('紹介文を作成する') ?>
+<form action="<?php echo url_for('introessay/index?id=' . $id) ?>" method="post">
+<?php echo $form ?>
+<br><br>
+<center><input type="submit" value="作成"></center>
+</form>
 

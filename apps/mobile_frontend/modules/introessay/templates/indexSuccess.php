@@ -1,1 +1,2 @@
-<?php include_box( 'infobox', '紹介文を作成する', '作成しました') ?>
+<?php include_page_title('紹介文を作成する') ?>
+作成しました
