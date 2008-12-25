@@ -1,0 +1,7 @@
+profileSuccess:
+  customize:
+    linkParts:
+      template: [member, linkParts]
+      parts: [friendList]
+      target: [before] 
+
