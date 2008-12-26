@@ -21,6 +21,6 @@ class IntroEssayForm extends BaseIntroEssayForm
 
     $this->widgetSchema->setNameFormat('intro_essay[%s]');
     $this->setValidator( 'content', new sfValidatorString(array('required' => true), array('required' => '紹介文を入力してください')));
-    $this->widgetSchema['content']->setAttributes(array('rows' => 8, 'cols' => 50));
+    $this->widgetSchema['content']->setAttributes(array('rows' => 8, 'cols' => 88));
   }
 }
