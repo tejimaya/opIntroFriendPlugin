@@ -22,12 +22,7 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
     // member check
     $this->member = MemberPeer::retrieveByPk($this->id);
     $this->forward404Unless($this->member, 'Undefined member.');
-
-    // friend check
-    $this->relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
-    $this->forward404Unless($this->relation, "this member is not friend");
-    if ( !$this->relation->getIsFriend() ) $this->forward404Unless( NULL, "this member is not friend");
-  }
+ }
 
  /**
   * Executes index action
@@ -36,6 +31,7 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
   */
   public function executeIndex($request)
   {
+    $this->friendCheck();
     $this->introEssay = IntroEssayPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
     $this->form = new IntroEssayForm($this->introEssay);
     if ($request->isMethod('post'))
@@ -71,6 +67,7 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
   */
   public function executeDelete($request)
   {
+    $this->friendCheck();
     $this->introEssay = IntroEssayPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
     $this->forward404Unless($this->introEssay, 'Undefined member.');
     if ($request->isMethod('post'))
@@ -81,5 +78,16 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
       }
       $this->redirect('member/' . $this->id);
     }
+  }
+
+  /**
+  * Executes friend check
+  */
+  public function friendCheck()
+  {
+    // friend check
+    $this->relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
+    $this->forward404Unless($this->relation, "this member is not friend");
+    if ( !$this->relation->getIsFriend() ) $this->forward404Unless( NULL, "this member is not friend");
   }
 }
