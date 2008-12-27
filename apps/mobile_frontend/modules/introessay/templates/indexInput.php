@@ -1,7 +1,7 @@
-<?php include_page_title('紹介文を作成する') ?>
+<?php include_page_title(__('Create introductory essay')) ?>
 <form action="<?php echo url_for('introessay/index?id=' . $id) ?>" method="post">
 <?php echo $form ?>
 <br><br>
-<center><input type="submit" value="作成"></center>
+<center><input type="submit" value="<?php __('Create') ?>"></center>
 </form>
 

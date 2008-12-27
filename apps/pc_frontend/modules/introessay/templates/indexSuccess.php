@@ -1,1 +1,1 @@
-<?php include_box( 'infobox', '紹介文を作成する', '作成しました') ?>
+<?php include_box( 'infobox', __('Create introductory essay'), __('It was created')) ?>

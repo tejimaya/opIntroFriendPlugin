@@ -1,0 +1,56 @@
+<?xml version="1.0" ?>
+<xliff version="1.0">
+  <file orginal="global" source-language="en" datatype="plaintext">
+    <body>
+      <trans-unit id="1">
+        <source>Write introductory essay</source>
+        <target>紹介文を書く</target>
+      </trans-unit>
+      <trans-unit id="2">
+        <source>Read introductory essay</source>
+        <target>紹介文を読む</target>
+      </trans-unit>
+
+      <trans-unit id="3">
+        <source>Introductory essay from my friend</source>
+        <target>マイフレンドからの紹介文</target>
+      </trans-unit>
+
+      <trans-unit id="4">
+        <source>Do you really delete it?</source>
+        <target>本当に削除しますか？</target>
+      </trans-unit>
+      <trans-unit id="5">
+        <source>Yes</source>
+        <target>はい</target>
+      </trans-unit>
+      <trans-unit id="6">
+        <source>No</source>
+        <target>いいえ</target>
+      </trans-unit>
+
+      <trans-unit id="7">
+        <source>Create introductory essay</source>
+        <target>紹介文を作成する</target>
+      </trans-unit>
+      <trans-unit id="8">
+        <source>Create</source>
+        <target>作成</target>
+      </trans-unit>
+
+      <trans-unit id="9">
+        <source>It was created</source>
+        <target>作成しました</target>
+      </trans-unit>
+
+      <trans-unit id="10">
+        <source>Name</source>
+        <target>氏名</target>
+      </trans-unit>
+      <trans-unit id="11">
+        <source>Introductory essay</source>
+        <target>紹介文</target>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

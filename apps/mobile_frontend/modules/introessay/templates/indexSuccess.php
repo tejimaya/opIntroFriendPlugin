@@ -1,2 +1,2 @@
-<?php include_page_title('紹介文を作成する') ?>
-作成しました
+<?php include_page_title(__('Create introductory essay')) ?>
+<?php echo __('It was created') ?>

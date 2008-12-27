@@ -24,6 +24,6 @@ if (count($introEssays)) {
       $name = link_to(image_tag_sf_image($writer->getImage(), array('size' => '76x76')) . '<br />' . $writer->getName(), 'member/' . $writer->getId());
       $list[$name] = nl2br($string) . ($pos ? '...' : '');
   }
-  $list['　'] = link_to( '全て見る', 'introessay/show?id=' . $id );
-  include_list_box('introEssay', $list, array( 'title' => 'マイフレンドからの紹介文'));
+  $list['　'] = link_to( __('Show all'), 'introessay/show?id=' . $id );
+  include_list_box('introEssay', $list, array( 'title' => __('Introductory essay from my friend')));
 }

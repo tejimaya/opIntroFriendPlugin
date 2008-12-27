@@ -1,5 +1,5 @@
 <?php
-include_page_title('紹介文');
+include_page_title(__('Introductory essay from my friend'));
 use_helper('Pagination');
 
 echo '<center>';
@@ -12,9 +12,9 @@ foreach ($pager->getResults() as $introEssay) {
       $criteria->add(MemberPeer::ID, $introEssay->getFromId());
       $writer = MemberPeer::doSelectOne($criteria);
 
-      $list[] = '氏名 :<br />'
+      $list[] = __('Name') . ' :<br />'
               . link_to($writer->getName(), 'member/profile?id=' . $writer->getId()) . '<br /><br />'
-              . '紹介文 :<br />'
+              . __('Introductory essay') . ' :<br />'
               . nl2br($introEssay->getContent());
 }
 $options = array(

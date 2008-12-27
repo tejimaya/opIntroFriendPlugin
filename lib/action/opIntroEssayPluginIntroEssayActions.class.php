@@ -15,10 +15,18 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
   */
   public function preExecute()
   {
+    // id check
     if(!$this->hasRequestParameter('id')) $this->forward404Unless( NULL, 'Undefined id.');
     $this->id = $this->getRequestParameter('id', $this->getUser()->getMemberId());
+
+    // member check
     $this->member = MemberPeer::retrieveByPk($this->id);
     $this->forward404Unless($this->member, 'Undefined member.');
+
+    // friend check
+    $this->relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
+    $this->forward404Unless($this->relation, "this member is not friend");
+    if ( !$this->relation->getIsFriend() ) $this->forward404Unless( NULL, "this member is not friend");
   }
 
  /**
