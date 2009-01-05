@@ -2,6 +2,7 @@ Navi:
   introfriend_navi_index:
     type: "friend"
     uri: "introfriend/index"
+    sort_order: 21;
 
 NaviI18n:
   introfriend_navi_index_i18n:
