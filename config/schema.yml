@@ -1,7 +1,7 @@
 propel:
-  _attributes: { package: plugins.opIntroEssayPlugin.lib.model }
+  _attributes: { package: plugins.opIntroFriendPlugin.lib.model }
 
-  intro_essay:
+  intro_friend:
      id: ~
      from_id:   { type: integer, foreignTable: member, foreignReference: id }
      to_id:     { type: integer, foreignTable: member, foreignReference: id }

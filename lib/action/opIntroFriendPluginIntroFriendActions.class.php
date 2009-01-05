@@ -1,14 +1,14 @@
 <?php
 
 /**
- * introessay actions.
+ * introfriend actions.
  *
  * @package    OpenPNE
- * @subpackage introessay
+ * @subpackage introfriend
  * @author     Your name here
  * @version    SVN: $Id: actions.class.php 9301 2008-05-27 01:08:46Z dwhittle $
  */
-class opIntroEssayPluginIntroEssayActions extends sfActions
+class opIntroFriendPluginIntroFriendActions extends sfActions
 {
  /**
   * Executes first time
@@ -32,12 +32,12 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
   public function executeIndex($request)
   {
     $this->friendCheck();
-    $this->introEssay = IntroEssayPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
-    $this->form = new IntroEssayForm($this->introEssay);
+    $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
+    $this->form = new IntroFriendForm($this->introFriend);
     if ($request->isMethod('post'))
     {
-      $array = $request->getParameter('intro_essay');
-      if (!$this->introEssay)
+      $array = $request->getParameter('intro_friend');
+      if (!$this->introFriend)
       {
         $array['from_id'] = $this->getUser()->GetMemberId();
         $array['to_id'] = $this->id;
@@ -45,10 +45,10 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
       $this->form->bind($array);
       if ($this->form->isValid())
       {
-        if ($this->introEssay)
+        if ($this->introFriend)
         {
-          $this->introEssay->setContent($array['content']);
-          $this->introEssay->save();
+          $this->introFriend->setContent($array['content']);
+          $this->introFriend->save();
         }
         else
         {
@@ -68,13 +68,13 @@ class opIntroEssayPluginIntroEssayActions extends sfActions
   public function executeDelete($request)
   {
     $this->friendCheck();
-    $this->introEssay = IntroEssayPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
-    $this->forward404Unless($this->introEssay, 'Undefined member.');
+    $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
+    $this->forward404Unless($this->introFriend, 'Undefined member.');
     if ($request->isMethod('post'))
     {
       if ($request->hasParameter('delete'))
       {
-        if (isset($this->introEssay)) $this->introEssay->delete();
+        if (isset($this->introFriend)) $this->introFriend->delete();
       }
       $this->redirect('member/' . $this->id);
     }
