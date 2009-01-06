@@ -17,8 +17,6 @@ class introfriendActions extends opIntroFriendPluginIntroFriendActions
   */
   public function executeList($request)
   {
-    $this->redirectIf($this->relation->isAccessBlocked(), '@error');
-
     $this->pager = IntroFriendPeer::getListPager($this->id, $request->getParameter('page', 1));
 
     if (!$this->pager->getNbResults()) {

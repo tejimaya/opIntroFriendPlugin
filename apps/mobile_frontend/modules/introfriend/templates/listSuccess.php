@@ -1,6 +1,5 @@
 <?php
 include_page_title(__('Introductory essay from my friend'));
-use_helper('Pagination');
 
 echo '<center>';
 echo pager_total($pager);

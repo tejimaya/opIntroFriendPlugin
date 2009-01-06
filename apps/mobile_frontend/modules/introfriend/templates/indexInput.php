@@ -2,6 +2,6 @@
 <form action="<?php echo url_for('introfriend/index?id=' . $id) ?>" method="post">
 <?php echo $form ?>
 <br><br>
-<center><input type="submit" value="<?php __('Create') ?>"></center>
+<center><input type="submit" value="<?php echo __('Create') ?>"></center>
 </form>
 
