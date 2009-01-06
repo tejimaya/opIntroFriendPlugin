@@ -17,7 +17,7 @@ if (count($introFriends)) {
         if (!$pos) { break; }
       }
       if ($pos) { $string = mb_substr($string, 0, $pos - 1); }
-      $name = link_to(image_tag_sf_image($writer->getImage(), array('size' => '76x76')) . '<br />' . $writer->getName(), 'member/' . $writer->getId());
+      $name = link_to(image_tag_sf_image($writer->getImageFilename(), array('size' => '76x76')) . '<br />' . $writer->getName(), 'member/' . $writer->getId());
       $list[$name] = nl2br($string) . ($pos ? '...' : '');
   }
   $list[' '] = link_to( __('Show all'), 'introfriend/show?id=' . $id );

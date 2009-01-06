@@ -1,7 +1,7 @@
 profileSuccess:
   customize:
-    linkParts:
-      template: [member, linkParts]
+    introFriendLink:
+      template: [member, introFriendLink]
       parts: [friendList]
       target: [before] 
 
