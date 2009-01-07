@@ -18,6 +18,7 @@ class introfriendActions extends opIntroFriendPluginIntroFriendActions
   public function executeList($request)
   {
     $this->pager = IntroFriendPeer::getListPager($this->id, $request->getParameter('page', 1));
+    $this->writers = IntroFriendPeer::getWriters($this->pager->getResults());
 
     if (!$this->pager->getNbResults()) {
       return sfView::ERROR;

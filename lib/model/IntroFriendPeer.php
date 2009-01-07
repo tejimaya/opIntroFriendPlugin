@@ -5,28 +5,49 @@ class IntroFriendPeer extends BaseIntroFriendPeer
   /**
    * Get introFriend from to_id
    * @param int $to_id member id
-   * @return array array object
+   * @return array array
    */
   public static function getByTo($to_id)
   {
     $criteria = new Criteria();
     $criteria->add(IntroFriendPeer::TO_ID, $to_id);
     $criteria->addDescendingOrderByColumn(IntroFriendPeer::ID);
-    return IntroFriendPeer::doSelect($criteria);
+    $introFriends = IntroFriendPeer::doSelect($criteria);
+    $list = array();
+    foreach ($introFriends as $i => $introFriend) {
+      $list[$i] = array();
+      $list[$i]['essay'] = nl2br($introFriend->getContent());
+      $list[$i]['member'] = MemberPeer::retrieveByPk($introFriend->getFromId());
+    }
+    return $list;
   }
 
   /**
-   * Get ByTo from Parts
+   * Get ByTo from Component
    * @param int $id member id
    * @return array object array
    */
-  public static function getPartsByTo($id)
+  public static function getComponentByTo($id)
   {
     $criteria = new Criteria();
     $criteria->add(self::TO_ID, $id);
     $criteria->addDescendingOrderByColumn(self::ID);
     $criteria->setLimit(sfConfig::get('app_max_introfriend'));
-    return self::doSelect($criteria);
+    $introFriends = self::doSelect($criteria);
+    $list = array();
+    foreach ($introFriends as $i => $introFriend) {
+      $list[$i] = array();
+      $string = $introFriend->getContent();
+      $list[$i]['member'] = MemberPeer::retrieveByPk($introFriend->getFromId());
+      for ($j = 0, $pos = 0; $j < sfconfig::get('app_line_introfriend'); $j++)
+      {
+        $pos = mb_strpos($string, "\n", $pos + 1);
+        if (!$pos) { break; }
+      }
+      if ($pos) { $string = mb_substr($string, 0, $pos - 1); }
+      $list[$i]['essay'] = nl2br($string);
+    }
+    return $list;
   }
 
   /**
@@ -60,7 +81,7 @@ class IntroFriendPeer extends BaseIntroFriendPeer
     $pager->setCriteria($c);
     $pager->setPage($page);
     $pager->init();
-
+ 
     return $pager;
   }
 
@@ -75,5 +96,19 @@ class IntroFriendPeer extends BaseIntroFriendPeer
     $criteria->add(self::TO_ID, $id);
     $criteria->addDescendingOrderByColumn(self::ID);
     return self::doCount($criteria);
+  }
+
+  /**
+   * Get to member
+   * @param array $introFriends IntroFriend array
+   * @return array Member array
+   */
+  public static function getWriters($introFriends)
+  {
+    $writers = array();
+    foreach ($introFriends as $i => $introFriend) {
+      $writers[$i] = MemberPeer::retrieveByPk($introFriend->getFromId());
+    }
+    return $writers;
   }
 }

@@ -6,15 +6,12 @@ echo pager_total($pager);
 echo '</center>';
 
 $list = array();
-foreach ($pager->getResults() as $introFriend) {
-      $criteria = new Criteria();
-      $criteria->add(MemberPeer::ID, $introFriend->getFromId());
-      $writer = MemberPeer::doSelectOne($criteria);
-
-      $list[] = __('Name') . ' :<br />'
-              . link_to($writer->getName(), 'member/profile?id=' . $writer->getId()) . '<br /><br />'
-              . __('Introductory essay') . ' :<br />'
-              . nl2br($introFriend->getContent());
+foreach ($pager->getResults() as $i => $introFriend) {
+  $writer = $writers[$i];
+  $list[] = __('Name') . ' :<br />'
+          . link_to($writer->getName(), 'member/profile?id=' . $writer->getId()) . '<br /><br />'
+          . __('Introductory essay') . ' :<br />'
+          . nl2br($introFriend->getContent());
 }
 $options = array(
   'border' => true,

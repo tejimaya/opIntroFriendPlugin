@@ -17,5 +17,7 @@ class introfriendActions extends opIntroFriendPluginIntroFriendActions
   */
   public function executeShow($request)
   {
+    $this->introList = IntroFriendPeer::getByTo($this->id);
+    if(!count($this->introList)) { return sfView::ERROR; }
   }
 }

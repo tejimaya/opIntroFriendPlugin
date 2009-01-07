@@ -1,6 +1,7 @@
 profileSuccess:
   customize:
-    showParts:
-      template: [member, showParts]
+    introFriendList:
+      template: [introfriend, introFriendList]
       parts: [profile]
+      is_component: true
       target: [after] 
