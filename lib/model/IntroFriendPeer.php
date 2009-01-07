@@ -11,21 +11,40 @@
 class IntroFriendPeer extends BaseIntroFriendPeer
 {
   /**
+   * not friend delete essay
+   * @param int $id check member id
+   */
+  public static function deleteCheck($id)
+  {
+    $criteria = new Criteria();
+    $criteria->add(IntroFriendPeer::TO_ID, $id);
+    $criteria->addJoin(IntroFriendPeer::TO_ID, MemberRelationshipPeer::MEMBER_ID_TO);
+    $criteria->addJoin(IntroFriendPeer::FROM_ID, MemberRelationshipPeer::MEMBER_ID_FROM);
+    $criteria->add(MemberRelationshipPeer::IS_FRIEND, false);
+    $introFriends = IntroFriendPeer::doSelect($criteria);
+    foreach ($introFriends as $introFriend) {
+      $introFriend->delete();
+    }
+  }
+
+  /**
    * Get introFriend from to_id
    * @param int $to_id member id
    * @return array array
    */
   public static function getByTo($to_id)
   {
+    self::deleteCheck($to_id);
     $criteria = new Criteria();
     $criteria->add(IntroFriendPeer::TO_ID, $to_id);
     $criteria->addDescendingOrderByColumn(IntroFriendPeer::ID);
     $introFriends = IntroFriendPeer::doSelect($criteria);
     $list = array();
+
     foreach ($introFriends as $i => $introFriend) {
       $list[$i] = array();
-      $list[$i]['essay'] = nl2br($introFriend->getContent());
-      $list[$i]['member'] = MemberPeer::retrieveByPk($introFriend->getFromId());
+      $list[$i]['essay'] = $introFriend->getContent();
+      $list[$i]['member'] = MemberPeer::retrieveByPk($introFriend->getFromId()); 
     }
     return $list;
   }
@@ -37,6 +56,7 @@ class IntroFriendPeer extends BaseIntroFriendPeer
    */
   public static function getComponentByTo($id)
   {
+    self::deleteCheck($id);
     $criteria = new Criteria();
     $criteria->add(self::TO_ID, $id);
     $criteria->addDescendingOrderByColumn(self::ID);
@@ -53,7 +73,7 @@ class IntroFriendPeer extends BaseIntroFriendPeer
         if (!$pos) { break; }
       }
       if ($pos) { $string = mb_substr($string, 0, $pos - 1); }
-      $list[$i]['essay'] = nl2br($string);
+      $list[$i]['essay'] = $string;
     }
     return $list;
   }
@@ -81,9 +101,10 @@ class IntroFriendPeer extends BaseIntroFriendPeer
    */
   public static function getListPager($to_id, $page = 1, $size = 20)
   {
+    self::deleteCheck($to_id);
     $c = new Criteria();
     $c->add(IntroFriendPeer::TO_ID, $to_id);
-    $c->addDescendingOrderByColumn(IntroFriendPeer::ID);
+    $c->addDescendingOrderByColumn(self::ID);
 
     $pager = new sfPropelPager('IntroFriend', $size);
     $pager->setCriteria($c);
