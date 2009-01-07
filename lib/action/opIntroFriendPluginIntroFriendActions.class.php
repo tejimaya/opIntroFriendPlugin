@@ -62,6 +62,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
         {
           $this->form->save();
         }
+        $this->redirect('member/profile?id=' . $this->id);
         return sfView::SUCCESS;
       }
     }
@@ -83,8 +84,9 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
       if ($request->hasParameter('delete'))
       {
         if (isset($this->introFriend)) $this->introFriend->delete();
+        $this->redirect('member/profile?id=' . $this->id);
       }
-      $this->redirect('member/' . $this->id);
+      $this->redirect('introfriend/show?id=' . $this->id);
     }
   }
 

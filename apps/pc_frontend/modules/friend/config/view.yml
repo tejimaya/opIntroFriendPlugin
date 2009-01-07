@@ -1,0 +1,7 @@
+manageSuccess:
+  customize:
+    introFriendManage:
+      template: [introfriend, introFriendManage]
+      parts: [id_photo]
+      is_component: true
+      target: [after] 
