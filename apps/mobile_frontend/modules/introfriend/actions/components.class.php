@@ -20,7 +20,7 @@ class introfriendComponents extends sfComponents
     {
       if(!$relation->getIsFriend())
       {
-        $this->ifFriend = false;
+        $this->isFriend = false;
       }
     }
   }
