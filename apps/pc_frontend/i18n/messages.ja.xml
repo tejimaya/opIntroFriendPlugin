@@ -37,6 +37,29 @@
         <source>It was created</source>
         <target>作成しました</target>
       </trans-unit>
+ 
+      <trans-unit id="9">
+        <source>Edit introductory essay</source>
+        <target>紹介文を編集する</target>
+      </trans-unit>
+      <trans-unit id="10">
+        <source>Delete introductory essay</source>
+        <target>紹介文を削除する</target>
+      </trans-unit>
+ 
+      <trans-unit id="11">
+        <source>Write introductory essay</source>
+        <target>紹介文を書く</target>
+      </trans-unit>
+      <trans-unit id="12">
+        <source>Edit</source>
+        <target>編集</target>
+      </trans-unit>
+      <trans-unit id="13">
+        <source>Delete</source>
+        <target>削除</target>
+      </trans-unit>
+ 
     </body>
   </file>
 </xliff>

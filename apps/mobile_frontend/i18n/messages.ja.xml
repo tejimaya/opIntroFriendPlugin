@@ -3,54 +3,63 @@
   <file orginal="global" source-language="en" datatype="plaintext">
     <body>
       <trans-unit id="1">
+        <source>Write</source>
+        <target>書く</target>
+      </trans-unit>
+       <trans-unit id="2">
         <source>Write introductory essay</source>
         <target>紹介文を書く</target>
       </trans-unit>
-      <trans-unit id="2">
+     <trans-unit id="3">
         <source>Read introductory essay</source>
         <target>紹介文を読む</target>
       </trans-unit>
 
-      <trans-unit id="3">
+      <trans-unit id="4">
         <source>Introductory essay from my friend</source>
         <target>マイフレンドからの紹介文</target>
       </trans-unit>
 
-      <trans-unit id="4">
+      <trans-unit id="5">
         <source>Do you really delete it?</source>
         <target>本当に削除しますか？</target>
       </trans-unit>
-      <trans-unit id="5">
+      <trans-unit id="6">
         <source>Yes</source>
         <target>はい</target>
       </trans-unit>
-      <trans-unit id="6">
+      <trans-unit id="7">
         <source>No</source>
         <target>いいえ</target>
       </trans-unit>
 
-      <trans-unit id="7">
+      <trans-unit id="8">
         <source>Create introductory essay</source>
         <target>紹介文を作成する</target>
       </trans-unit>
-      <trans-unit id="8">
+      <trans-unit id="9">
         <source>Create</source>
         <target>作成</target>
       </trans-unit>
 
-      <trans-unit id="9">
+      <trans-unit id="10">
         <source>It was created</source>
         <target>作成しました</target>
       </trans-unit>
 
-      <trans-unit id="10">
+      <trans-unit id="11">
         <source>Name</source>
         <target>氏名</target>
       </trans-unit>
-      <trans-unit id="11">
+      <trans-unit id="12">
         <source>Introductory essay</source>
         <target>紹介文</target>
       </trans-unit>
-    </body>
+     <trans-unit id="13">
+        <source>Introductory essay is not being written</source>
+        <target>紹介文が書かれていません</target>
+      </trans-unit>
+
+   </body>
   </file>
 </xliff>

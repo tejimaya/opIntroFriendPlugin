@@ -1,7 +1,7 @@
 profileSuccess:
   customize:
     introFriendLink:
-      template: [member, introFriendLink]
+      template: [introfriend, introFriendLink]
       parts: [friendList]
       target: [before] 
 

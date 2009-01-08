@@ -8,9 +8,9 @@ foreach ($introList as $obj) {
   $list[$img] = '<p>' . nl2br($obj['essay']) . '</p>';
   if ($member->getId() == $sf_user->getMemberId()) {
     $list[$img] .= '<ul><li>'
-                 . link_to('紹介文を編集する', 'introfriend/index?id=' . $id)
+                 . link_to(__('Edit introductory essay'), 'introfriend/index?id=' . $id)
                  . '</li><li>'
-                 . link_to('紹介文を削除する', 'introfriend/delete?id=' . $id)
+                 . link_to(__('Delete introductory essay'), 'introfriend/delete?id=' . $id)
                  . '</li></ul>';
   }
 }

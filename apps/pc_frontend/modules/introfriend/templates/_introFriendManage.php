@@ -2,11 +2,11 @@
 <?php
 if ($introFriend) {
   echo '<p>' . $introFriend->getContent() . '</p><p>'
-  . link_to(__('編集'), 'introfriend/index?id=' . $id) . ' '
-  . link_to(__('削除'), 'introfriend/delete?id=' . $id) . '</p>';
+  . link_to(__('Edit'), 'introfriend/index?id=' . $id) . ' '
+  . link_to(__('Delete'), 'introfriend/delete?id=' . $id) . '</p>';
 }
 else {
-  echo link_to(_('紹介文を書く'), 'introfriend/index?id=' . $id);
+  echo '<p>' . link_to(__('Write introductory essay'), 'introfriend/index?id=' . $id) . '</p>';
 }
 ?>
 </td>
