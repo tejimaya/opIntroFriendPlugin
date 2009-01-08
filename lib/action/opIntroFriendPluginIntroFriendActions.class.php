@@ -44,7 +44,10 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   */
   public function executeIndex($request)
   {
-    $this->friendCheck();
+    if (!$this->friendCheck())
+    {
+      return sfView::ERROR;
+    }
     $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
     $this->form = new IntroFriendForm($this->introFriend);
     if ($request->isMethod('post'))
@@ -81,7 +84,10 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   */
   public function executeDelete($request)
   {
-    $this->friendCheck();
+    if (!$this->friendCheck())
+    {
+      return sfView::ERROR;
+    }
     $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
     $this->forward404Unless($this->introFriend, 'Undefined member.');
     if ($request->isMethod('post'))
@@ -102,7 +108,13 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   {
     // friend check
     $this->relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
-    $this->forward404Unless($this->relation, "this member is not friend");
-    if ( !$this->relation->getIsFriend() ) $this->forward404Unless( NULL, "this member is not friend");
+    if ($this->relation==null)
+    {
+      return false;
+    }
+    if(!$this->relation->getIsFriend())
+    {
+      return false;
+    }
   }
 }

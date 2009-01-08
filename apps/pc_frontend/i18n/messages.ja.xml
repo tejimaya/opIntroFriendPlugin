@@ -59,6 +59,15 @@
         <source>Delete</source>
         <target>削除</target>
       </trans-unit>
+
+      <trans-unit id="14">
+        <source>Error</source>
+        <target>エラー</target>
+      </trans-unit>
+      <trans-unit id="15">
+        <source>Not your friend</source>
+        <target>フレンドではありません。</target>
+      </trans-unit>
  
     </body>
   </file>
