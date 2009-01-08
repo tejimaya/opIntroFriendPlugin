@@ -30,7 +30,12 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     // member check
     $this->member = MemberPeer::retrieveByPk($this->id);
     $this->forward404Unless($this->member, 'Undefined member.');
- }
+
+    if ($this->id != $this->getUser()->getMemberId())
+    {
+      sfConfig::set('sf_navi_type', 'friend');
+    }
+  }
 
  /**
   * Executes index action
