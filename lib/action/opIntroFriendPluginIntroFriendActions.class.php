@@ -107,14 +107,15 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   public function friendCheck()
   {
     // friend check
-    $this->relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
-    if ($this->relation==null)
+    $relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
+    if ($relation==null)
     {
       return false;
     }
-    if(!$this->relation->getIsFriend())
+    if(!$relation->getIsFriend())
     {
       return false;
     }
+    return true;
   }
 }

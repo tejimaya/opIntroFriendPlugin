@@ -3,5 +3,6 @@ profileSuccess:
     introFriendLink:
       template: [introfriend, introFriendLink]
       parts: [friendList]
+      is_component: true
       target: [before] 
 
