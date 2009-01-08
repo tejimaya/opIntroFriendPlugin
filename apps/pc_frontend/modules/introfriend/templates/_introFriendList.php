@@ -9,6 +9,6 @@ if (count($introList)) {
          . '<br />' . $writer->getName(), 'member/' . $writer->getId());
     $list[$img] = nl2br($obj['essay']);
   }
-  $list[' '] = link_to( __('Show all'), 'introfriend/show?id=' . $id );
+  $list[' '] = link_to( __('Show all'), 'introfriend/list?id=' . $id );
   include_list_box('introFriend', $list, array( 'title' => __('Introductory essay from my friend')));
 }

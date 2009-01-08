@@ -86,7 +86,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
         if (isset($this->introFriend)) $this->introFriend->delete();
         $this->redirect('member/profile?id=' . $this->id);
       }
-      $this->redirect('introfriend/show?id=' . $this->id);
+      $this->redirect('introfriend/list?id=' . $this->id);
     }
   }
 

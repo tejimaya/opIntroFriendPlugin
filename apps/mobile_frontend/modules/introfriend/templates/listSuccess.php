@@ -6,12 +6,19 @@ echo pager_total($pager);
 echo '</center>';
 
 $list = array();
-foreach ($pager->getResults() as $i => $introFriend) {
+foreach ($pager->getResults() as $i => $introFriend)
+{
   $writer = $writers[$i];
-  $list[] = __('Name') . ' :<br />'
-          . link_to($writer->getName(), 'member/profile?id=' . $writer->getId()) . '<br /><br />'
-          . __('Introductory essay') . ' :<br />'
+  $list[$i] = '<p>' . __('Name') . ' :</p>'
+          . '<p>' . link_to($writer->getName(), 'member/profile?id=' . $writer->getId()) . '</p>'
+          . '<p>' . __('Introductory essay') . ' :</p>'
           . nl2br($introFriend->getContent());
+
+  if ($writer->getId() == $sf_user->getMemberId())
+  {
+    $list[$i] .= '<p>' . link_to(__('Edit'), 'introfriend/index?id=' . $id) . '<br />'
+               . link_to(__('Delete'), 'introfriend/delete?id=' . $id) . '</p>';
+  }
 }
 $options = array(
   'border' => true,

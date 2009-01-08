@@ -19,11 +19,11 @@
 class introfriendActions extends opIntroFriendPluginIntroFriendActions 
 {
  /**
-  * Executes show action
+  * Executes list action
   *
   * @param sfRequest $request A request object
   */
-  public function executeShow($request)
+  public function executeList($request)
   {
     $this->introList = IntroFriendPeer::getByTo($this->id);
     if(!count($this->introList)) { return sfView::ERROR; }
