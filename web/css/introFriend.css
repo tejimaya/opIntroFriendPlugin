@@ -1,0 +1,7 @@
+.profileTable th, .profileTable td {
+  padding: 5px;
+}
+
+.profileTable th {
+  width: 140px;
+}
