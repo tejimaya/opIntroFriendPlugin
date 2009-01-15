@@ -24,7 +24,7 @@ class IntroFriendForm extends BaseIntroFriendForm
       'content' => new sfWidgetFormTextarea()
     ));
     $this->widgetSchema->setLabels(array(
-    'content' => '紹介文',
+    'content' => 'Introductory essay',
     ));
 
     $this->widgetSchema->setNameFormat('intro_friend[%s]');

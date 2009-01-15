@@ -74,6 +74,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
         return sfView::SUCCESS;
       }
     }
+    $this->member = MemberPeer::retrieveByPk($this->id);
     return sfView::INPUT;
   }
 
