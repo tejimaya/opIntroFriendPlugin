@@ -1,11 +1,11 @@
-Navi:
-  introfriend_navi_index:
+Navigation:
+  introfriend_navigation_index:
     type: "friend"
     uri: "introfriend/index"
     sort_order: 21;
 
-NaviI18n:
-  introfriend_navi_index_i18n:
-    id: introfriend_navi_index
+NavigationI18n:
+  introfriend_navigation_index_i18n:
+    id: introfriend_navigation_index
     caption: "紹介文を書く"
     culture: "ja_JP"
