@@ -1,4 +1,4 @@
-<?php include_page_title(__('Create introductory essay')) ?>
+<?php op_mobile_page_title(__('Create introductory essay')) ?>
 <form action="<?php echo url_for('introfriend/index?id=' . $id) ?>" method="post">
 <?php echo $form ?>
 <br><br>
