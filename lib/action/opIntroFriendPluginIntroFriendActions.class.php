@@ -102,7 +102,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     }
   }
 
-  /**
+ /**
   * Executes friend check
   */
   public function friendCheck()

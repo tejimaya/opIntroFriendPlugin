@@ -31,8 +31,4 @@ class IntroFriendForm extends BaseIntroFriendForm
     $this->setValidator( 'content', new sfValidatorString(array('required' => true), array('required' => '紹介文を入力してください')));
     $this->widgetSchema['content']->setAttributes(array('rows' => 8, 'cols' => 88));
   }
-  public function __toString()
-  {
-    return get_slot('opIntroFriend') . parent::__toString();
-  }
 }
