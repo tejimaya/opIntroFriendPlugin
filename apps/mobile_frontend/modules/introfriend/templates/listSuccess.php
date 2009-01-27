@@ -1,5 +1,5 @@
 <?php
-include_page_title(__('Introductory essay from my friend'));
+op_mobile_page_title(__('Introductory essay from my friend'));
 
 echo '<center>';
 echo pager_total($pager);
