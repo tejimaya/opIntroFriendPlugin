@@ -10,10 +10,10 @@ class introfriendComponents extends sfComponents
 {
   public function executeIntroFriendManage()
   {
-    $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
+    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
   }
   public function executeIntroFriendList()
   {
-    $this->introList = IntroFriendPeer::getComponentByTo($this->id);
+    $this->introList = Doctrine::getTable('IntroFriend')->getComponentByTo($this->id);
   }
 }

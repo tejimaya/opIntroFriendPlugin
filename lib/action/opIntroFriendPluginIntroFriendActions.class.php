@@ -28,7 +28,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     $this->id = $this->getRequestParameter('id', $this->getUser()->getMemberId());
 
     // member check
-    $this->member = MemberPeer::retrieveByPk($this->id);
+    $this->member = Doctrine::getTable('Member')->find($this->id);
     $this->forward404Unless($this->member, 'Undefined member.');
 
     if ($this->id != $this->getUser()->getMemberId())
@@ -48,33 +48,28 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     {
       return sfView::ERROR;
     }
-    $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
+    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
     $this->form = new IntroFriendForm($this->introFriend);
     if ($request->isMethod('post'))
     {
       $array = $request->getParameter('intro_friend');
-      if (!$this->introFriend)
-      {
-        $array['from_id'] = $this->getUser()->GetMemberId();
-        $array['to_id'] = $this->id;
-      }
       $this->form->bind($array);
       if ($this->form->isValid())
       {
-        if ($this->introFriend)
+        if (!$this->introFriend)
         {
-          $this->introFriend->setContent($array['content']);
-          $this->introFriend->save();
+          $this->introFriend = new IntroFriend();
+          $this->introFriend->setMemberIdFrom($this->getUser()->getMemberId());
+          $this->introFriend->setMemberIdTo($this->id);
         }
-        else
-        {
-          $this->form->save();
-        }
+        $this->introFriend->setContent($array['content']);
+        $this->introFriend->save();
+
         $this->redirect('member/profile?id=' . $this->id);
         return sfView::SUCCESS;
       }
     }
-    $this->member = MemberPeer::retrieveByPk($this->id);
+    $this->member = Doctrine::getTable('Member')->find($this->id);
     return sfView::INPUT;
   }
 
@@ -89,7 +84,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     {
       return sfView::ERROR;
     }
-    $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
+    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
     $this->forward404Unless($this->introFriend, 'Undefined member.');
     if ($request->isMethod('post'))
     {
@@ -108,7 +103,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   public function friendCheck()
   {
     // friend check
-    $relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
+    $relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
     if ($relation==null)
     {
       return false;

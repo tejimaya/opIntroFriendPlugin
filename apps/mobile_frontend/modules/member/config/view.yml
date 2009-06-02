@@ -2,7 +2,7 @@ profileSuccess:
   customize:
     introFriendLink:
       template: [introfriend, introFriendLink]
-      parts: [friendList]
+      parts: [menu]
       is_component: true
-      target: [before] 
+      target: [bottom] 
 

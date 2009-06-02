@@ -25,7 +25,7 @@ class introfriendActions extends opIntroFriendPluginIntroFriendActions
   */
   public function executeList($request)
   {
-    $this->introList = IntroFriendPeer::getByTo($this->id);
+    $this->introList = Doctrine::getTable('IntroFriend')->getByTo($this->id);
     if(!count($this->introList)) { return sfView::ERROR; }
   }
 }

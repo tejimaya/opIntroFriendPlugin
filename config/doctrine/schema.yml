@@ -1,0 +1,14 @@
+options:
+  charset: utf8
+actAs: [Timestampable]
+
+IntroFriend:
+  columns:
+    id: { type: integer(4), primary: true, autoincrement: true }
+    member_id_to: { type: integer(4), notnull: true }
+    member_id_from: { type: integer(4), notnull: true }
+    content: { type: string, notnull: true }
+  relations:
+    Member: { local: member_id_to, foreign: id }
+    Member_2: { class: Member, local: member_id_from, foreign: id }
+    MemberRelationship: { local: member_id_to, foreign: member_id_to }

@@ -2,10 +2,9 @@ Navigation:
   introfriend_navigation_index:
     type: "friend"
     uri: "introfriend/index"
-    sort_order: 21;
-
-NavigationI18n:
-  introfriend_navigation_index_i18n:
-    id: introfriend_navigation_index
-    caption: "紹介文を書く"
-    culture: "ja_JP"
+    sort_order: 21
+    Translation:
+      ja_JP:
+        caption: "紹介文を書く"
+      en:
+        caption: "Write introductory"

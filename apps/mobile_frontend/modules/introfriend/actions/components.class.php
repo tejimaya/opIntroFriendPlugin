@@ -11,7 +11,7 @@ class introfriendComponents extends sfComponents
   public function executeIntroFriendLink($request)
   {
     $this->isFriend = true;
-    $relation = MemberRelationshipPeer::retrieveByFromAndTo($this->getUser()->getMemberId(), $request->getParameter('id'));
+    $relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($this->getUser()->getMemberId(), $request->getParameter('id'));
     if ($relation == null)
     {
       $this->isFriend = false;
@@ -27,6 +27,6 @@ class introfriendComponents extends sfComponents
 
   public function executeIntroFriendManage($request)
   {
-    $this->introFriend = IntroFriendPeer::getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
+    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
   }
 }

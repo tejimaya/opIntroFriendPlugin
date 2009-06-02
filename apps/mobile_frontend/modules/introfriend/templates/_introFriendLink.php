@@ -1,11 +1,13 @@
 <?php
 
-$cnt = IntroFriendPeer::getCount($id);
+$cnt = Doctrine::getTable('IntroFriend')->getCount($id);
 
-echo link_to(__('Read introductory essay') . '(' . $cnt . ')', 'introfriend/list?id=' . $id) . '<br>';
+echo link_to(__('Read introductory essay') . '(' . $cnt . ')', 'introfriend/list?id=' . $id);
 
 if ($isFriend == true)
 {
   echo ' / ' . link_to(__('Write'), 'introfriend/index?id=' . $id);
 }
 
+?>
+<br>
