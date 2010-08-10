@@ -1,5 +1,4 @@
 <?php
-
 /**
  * This file is part of the OpenPNE package.
  * (c) OpenPNE Project (http://www.openpne.jp/)
@@ -95,6 +94,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     {
       if ($request->hasParameter('delete'))
       {
+        $request->checkCSRFProtection();
         if (isset($this->introFriend)) $this->introFriend->delete();
         $this->redirect('member/profile?id=' . $this->id);
       }
