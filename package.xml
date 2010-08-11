@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -13,18 +13,26 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-02-05</date>
- <time>08:40:08</time>
+ <developer>
+  <name>kashiwasan</name>
+  <user>kashiwasan</user>
+  <email />
+  <active>yes</active>
+ </developer>
+ <date>2010-08-11</date>
+ <time>13:15:08</time>
  <version>
-  <release>0.8.0</release>
-  <api>0.8.0</api>
+  <release>0.8.0.1</release>
+  <api>0.8.0.1</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
- <license>Apache</license>
- <notes>First release</notes>
+ <license>apache</license>
+ <notes>
+fixed security issue of CSRF.
+ </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="5245cc2dff9b1405b27eecaa89699ac8" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
@@ -33,7 +41,7 @@
    <file baseinstalldir="/" md5sum="cb9aa37cdb4df6bc43f1e5396ab257ea" name="apps/mobile_frontend/modules/introfriend/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/mobile_frontend/modules/introfriend/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="faa7fcb44e357d0968093a45523ff3ab" name="apps/mobile_frontend/modules/introfriend/templates/deleteError.php" role="data" />
-   <file baseinstalldir="/" md5sum="ae523463fbe615dc6c148608e283e81d" name="apps/mobile_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="3296a039cb99de41553076fb30be1da6" name="apps/mobile_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="faa7fcb44e357d0968093a45523ff3ab" name="apps/mobile_frontend/modules/introfriend/templates/indexError.php" role="data" />
    <file baseinstalldir="/" md5sum="ccad1a4b673b4711d606fd4a26bfa1e5" name="apps/mobile_frontend/modules/introfriend/templates/indexInput.php" role="data" />
    <file baseinstalldir="/" md5sum="89ad186c5dbc490deec6b7edcaaebac8" name="apps/mobile_frontend/modules/introfriend/templates/indexSuccess.php" role="data" />
@@ -48,7 +56,7 @@
    <file baseinstalldir="/" md5sum="ab7f1eb0979ade75509724397280bc9e" name="apps/pc_frontend/modules/introfriend/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/introfriend/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="028210493dacd1bcb7d6b775a3ccce95" name="apps/pc_frontend/modules/introfriend/templates/deleteError.php" role="data" />
-   <file baseinstalldir="/" md5sum="d984aaa7a90572ff37477f614d73c8f9" name="apps/pc_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="b4332a677f4bf0755b254dc06eee1b39" name="apps/pc_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="028210493dacd1bcb7d6b775a3ccce95" name="apps/pc_frontend/modules/introfriend/templates/indexError.php" role="data" />
    <file baseinstalldir="/" md5sum="da3b6e5b93b0d457fc73adb6d54e7ac0" name="apps/pc_frontend/modules/introfriend/templates/indexInput.php" role="data" />
    <file baseinstalldir="/" md5sum="c545cf92365a637f8ebcc8f4c3a561eb" name="apps/pc_frontend/modules/introfriend/templates/indexSuccess.php" role="data" />
@@ -60,7 +68,7 @@
    <file baseinstalldir="/" md5sum="e550535d8bc0484a111c0a7658b0c362" name="config/schema.yml" role="data" />
    <file baseinstalldir="/" md5sum="209bcec31db4baaac439125b53e3cff7" name="data/fixtures/navigation.yml" role="data" />
    <file baseinstalldir="/" md5sum="8963e8eea62c94c08d954b1caa06b6b8" name="i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="7b591fe55c46edc490db19fe5b452234" name="lib/action/opIntroFriendPluginIntroFriendActions.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="2747ac442fce9a01cdeaedadf4b9e729" name="lib/action/opIntroFriendPluginIntroFriendActions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="fb7dececbd1b4ea839a2dc917a2fb2fc" name="lib/filter/IntroFriendFormFilter.class.php" role="data" />
    <file baseinstalldir="/" md5sum="64daf7dbcc9b5e0d2accb6bcc6f8e3e1" name="lib/form/IntroFriendForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="04054eede535668e2385a963669689ee" name="lib/model/IntroFriend.php" role="data" />
@@ -76,11 +84,6 @@
    <pearinstaller>
     <min>1.4.0</min>
    </pearinstaller>
-   <package>
-    <name>symfony</name>
-    <channel>pear.symfony-project.com</channel>
-    <min>1.2.0</min>
-   </package>
   </required>
  </dependencies>
  <phprelease />
@@ -96,7 +99,24 @@
    </stability>
    <date>2009-02-05</date>
    <license>Apache</license>
-   <notes>First release</notes>
+   <notes>
+First release
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.8.0.1</release>
+    <api>0.8.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-08-11</date>
+   <license>apache</license>
+   <notes>
+fixed security issue of CSRF.
+   </notes>
   </release>
  </changelog>
 </package>
