@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<package packagerversion="1.7.2" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
+<package packagerversion="1.9.0" version="2.0" xmlns="http://pear.php.net/dtd/package-2.0" xmlns:tasks="http://pear.php.net/dtd/tasks-1.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://pear.php.net/dtd/tasks-1.0
     http://pear.php.net/dtd/tasks-1.0.xsd
     http://pear.php.net/dtd/package-2.0
     http://pear.php.net/dtd/package-2.0.xsd">
@@ -13,18 +13,26 @@
   <email />
   <active>yes</active>
  </lead>
- <date>2009-06-01</date>
- <time>10:20:07</time>
+ <developer>
+  <name>kashiwasan</name>
+  <user>kashiwasan</user>
+  <email />
+  <active>yes</active>
+ </developer>
+ <date>2010-08-11</date>
+ <time>13:22:01</time>
  <version>
-  <release>0.9.0</release>
-  <api>0.9.0</api>
+  <release>0.9.0.1</release>
+  <api>0.9.0.1</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>This plugin is now compatible with Doctrine</notes>
+ <notes>
+fixed security issue of CSRF.
+ </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="5245cc2dff9b1405b27eecaa89699ac8" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
@@ -33,22 +41,22 @@
    <file baseinstalldir="/" md5sum="106d1812ce0e41d4bfb4dae43de28ef6" name="apps/mobile_frontend/modules/introfriend/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/mobile_frontend/modules/introfriend/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="faa7fcb44e357d0968093a45523ff3ab" name="apps/mobile_frontend/modules/introfriend/templates/deleteError.php" role="data" />
-   <file baseinstalldir="/" md5sum="ae523463fbe615dc6c148608e283e81d" name="apps/mobile_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="3296a039cb99de41553076fb30be1da6" name="apps/mobile_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="faa7fcb44e357d0968093a45523ff3ab" name="apps/mobile_frontend/modules/introfriend/templates/indexError.php" role="data" />
    <file baseinstalldir="/" md5sum="ccad1a4b673b4711d606fd4a26bfa1e5" name="apps/mobile_frontend/modules/introfriend/templates/indexInput.php" role="data" />
    <file baseinstalldir="/" md5sum="89ad186c5dbc490deec6b7edcaaebac8" name="apps/mobile_frontend/modules/introfriend/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="903570ec177bc9bd208773bfd862e84e" name="apps/mobile_frontend/modules/introfriend/templates/listError.php" role="data" />
    <file baseinstalldir="/" md5sum="234eff48b4ebb8bcb98eb4b3d521fb0a" name="apps/mobile_frontend/modules/introfriend/templates/listSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="b912c161512dae007d13815a33b8eee9" name="apps/mobile_frontend/modules/introfriend/templates/_introFriendLink.php" role="data" />
+   <file baseinstalldir="/" md5sum="07e327c82c071d7e388251f188ec2cdb" name="apps/mobile_frontend/modules/introfriend/templates/_introFriendLink.php" role="data" />
    <file baseinstalldir="/" md5sum="9a29e18afd3732b1b9f1d5b797cb135c" name="apps/mobile_frontend/modules/introfriend/templates/_introFriendManage.php" role="data" />
-   <file baseinstalldir="/" md5sum="9739303d79ed42cf42399d15b947704f" name="apps/mobile_frontend/modules/member/config/view.yml" role="data" />
+   <file baseinstalldir="/" md5sum="9666f06fb0018707cee9af92888a5571" name="apps/mobile_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="2343cac12789ea41ab688f87ff65ebb8" name="apps/pc_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="c4da5353b95a8313969e3f94f35202b4" name="apps/pc_frontend/modules/friend/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="421ceb26ecfaac465557508399298234" name="apps/pc_frontend/modules/introfriend/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="ae75958fea7ec1336f995fb9a2d22207" name="apps/pc_frontend/modules/introfriend/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/introfriend/config/security.yml" role="data" />
    <file baseinstalldir="/" md5sum="028210493dacd1bcb7d6b775a3ccce95" name="apps/pc_frontend/modules/introfriend/templates/deleteError.php" role="data" />
-   <file baseinstalldir="/" md5sum="d984aaa7a90572ff37477f614d73c8f9" name="apps/pc_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="b4332a677f4bf0755b254dc06eee1b39" name="apps/pc_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="028210493dacd1bcb7d6b775a3ccce95" name="apps/pc_frontend/modules/introfriend/templates/indexError.php" role="data" />
    <file baseinstalldir="/" md5sum="da3b6e5b93b0d457fc73adb6d54e7ac0" name="apps/pc_frontend/modules/introfriend/templates/indexInput.php" role="data" />
    <file baseinstalldir="/" md5sum="c545cf92365a637f8ebcc8f4c3a561eb" name="apps/pc_frontend/modules/introfriend/templates/indexSuccess.php" role="data" />
@@ -60,8 +68,7 @@
    <file baseinstalldir="/" md5sum="91d8f5cda7b8b8c6a62d3731057efb99" name="config/doctrine/schema.yml" role="data" />
    <file baseinstalldir="/" md5sum="31e0fcd002471a43c56668f2fdfcf648" name="data/fixtures/navigation.yml" role="data" />
    <file baseinstalldir="/" md5sum="8963e8eea62c94c08d954b1caa06b6b8" name="i18n/messages.ja.xml" role="data" />
-   <file baseinstalldir="/" md5sum="533937f45d6c1b01d137d29076926c08" name="lib/action/opIntroFriendPluginIntroFriendActions.class.php" role="data" />
-   <file baseinstalldir="/" md5sum="fb7dececbd1b4ea839a2dc917a2fb2fc" name="lib/filter/IntroFriendFormFilter.class.php" role="data" />
+   <file baseinstalldir="/" md5sum="f8b3f445c7d58621ffc8c76ee45a76d1" name="lib/action/opIntroFriendPluginIntroFriendActions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f4f267b83ce51e6280c707906242447c" name="lib/filter/doctrine/PluginIntroFriendFormFilter.class.php" role="data" />
    <file baseinstalldir="/" md5sum="36c1b191f1745640e43790bd00c65357" name="lib/form/doctrine/PluginIntroFriendForm.class.php" role="data" />
    <file baseinstalldir="/" md5sum="0000fe580dac402230ebd624ccdc9cec" name="lib/model/doctrine/PluginIntroFriend.class.php" role="data" />
@@ -77,11 +84,6 @@
    <pearinstaller>
     <min>1.4.0</min>
    </pearinstaller>
-   <package>
-    <name>symfony</name>
-    <channel>pear.symfony-project.com</channel>
-    <min>1.2.0</min>
-   </package>
   </required>
  </dependencies>
  <phprelease />
@@ -97,7 +99,24 @@
    </stability>
    <date>2009-06-01</date>
    <license>apache</license>
-   <notes>This plugin is now compatible with Doctrine</notes>
+   <notes>
+This plugin is now compatible with Doctrine
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.0.1</release>
+    <api>0.9.0.1</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-08-11</date>
+   <license>apache</license>
+   <notes>
+fixed security issue of CSRF.
+   </notes>
   </release>
  </changelog>
 </package>
