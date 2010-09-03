@@ -29,15 +29,16 @@ class PluginIntroFriendTable extends Doctrine_Table
   {
     $this->deleteCheck($memberIdTo);
     $introFriends = $this->createQuery()
+      ->select('content, member_id_from')
       ->where('member_id_to = ?', $memberIdTo)
       ->orderBy('id')
-      ->execute();
+      ->execute(array(), Doctrine::HYDRATE_NONE);
 
     $list = array();
     foreach ($introFriends as $i => $introFriend) {
       $list[$i] = array();
-      $list[$i]['essay'] = $introFriend->getContent();
-      $list[$i]['member'] = $introFriend->getMember_2();
+      $list[$i]['essay'] = $introFriend[0];
+      $list[$i]['member'] = $introFriend[1];
     }
 
     return $list;
