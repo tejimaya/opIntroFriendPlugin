@@ -18,20 +18,4 @@
  */
 class introfriendActions extends opIntroFriendPluginIntroFriendActions 
 {
- /**
-  * Executes list action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeList($request)
-  {
-    $this->pager = Doctrine::getTable('IntroFriend')->getListPager($this->id, $request->getParameter('page', 1));
-    $this->writers = Doctrine::getTable('IntroFriend')->getWriters($this->pager->getResults());
-
-    if (!$this->pager->getNbResults()) {
-      return sfView::ERROR;
-    }
-
-    return sfView::SUCCESS;
-  }
 }

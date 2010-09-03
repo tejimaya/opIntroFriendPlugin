@@ -22,13 +22,21 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   */
   public function preExecute()
   {
-    // id check
-    if(!$this->hasRequestParameter('id')) $this->forward404Unless( NULL, 'Undefined id.');
-    $this->id = $this->getRequestParameter('id', $this->getUser()->getMemberId());
+    if (is_callable(array($this->getRoute(), 'getObject')))
+    {
+      $object = $this->getRoute()->getObject();
+      if ($object instanceof Member)
+      {
+        $this->member = $object;
+      }
+    }
 
-    // member check
-    $this->member = Doctrine::getTable('Member')->find($this->id);
-    $this->forward404Unless($this->member, 'Undefined member.');
+    if (empty($this->member))
+    {
+      $this->member = $this->getUser()->getMember();
+    }
+
+    $this->id = $this->member->id;
 
     if ($this->id != $this->getUser()->getMemberId())
     {
@@ -47,7 +55,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     {
       return sfView::ERROR;
     }
-    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
+    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->getMemberId(), $this->id);
     $this->form = new IntroFriendForm($this->introFriend);
     if ($request->isMethod('post'))
     {
@@ -70,6 +78,17 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     }
     $this->member = Doctrine::getTable('Member')->find($this->id);
     return sfView::INPUT;
+  }
+
+ /**
+  * Executes list action
+  *
+  * @param sfRequest $request A request object
+  */
+  public function executeList($request)
+  {
+    $this->pager = Doctrine::getTable('IntroFriend')->getListPager($this->id, $request->getParameter('page', 1));
+    if (!$this->pager->getNbResults()) return sfView::ERROR;
   }
 
  /**

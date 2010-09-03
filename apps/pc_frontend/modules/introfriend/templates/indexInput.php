@@ -16,7 +16,7 @@
 </tr>
 <tr>
 <th><?php echo __('Nickname') ?></th>
-<td><?php echo link_to($member->getName(), 'member/profile?id=' . $member->getId()) ?></td>
+<td><?php echo link_to($member->getName(), 'obj_member_profile', $member) ?></td>
 </tr>
 
 <?php echo $form ?>

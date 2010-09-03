@@ -1,0 +1,4 @@
+SnsConfig:
+  op_introfriend_plugin_current_revision:
+    name: "opIntroFriendPlugin_revision"
+    value: 1

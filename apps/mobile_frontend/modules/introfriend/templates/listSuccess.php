@@ -8,16 +8,18 @@ echo '</center>';
 $list = array();
 foreach ($pager->getResults() as $i => $introFriend)
 {
-  $writer = $writers[$i];
+  $member = $introFriend->getMember_2();
   $list[$i] = '<p>' . __('Name') . ' :</p>'
-          . '<p>' . link_to($writer->getName(), 'member/profile?id=' . $writer->getId()) . '</p>'
+          . '<p>' . link_to($member->getName(), 'member_profile', $member) . '</p>'
           . '<p>' . __('Introductory essay') . ' :</p>'
           . nl2br($introFriend->getContent());
 
-  if ($writer->getId() == $sf_user->getMemberId())
-  {
-    $list[$i] .= '<p>' . link_to(__('Edit'), 'introfriend/index?id=' . $id) . '<br />'
-               . link_to(__('Delete'), 'introfriend/delete?id=' . $id) . '</p>';
+  if ($id == $sf_user->getMemberId() || $member->getId() == $sf_user->getMemberId()) {
+    if ($member->getId() == $sf_user->getMemberId())
+    {
+      $list[$img] .= '<p>' . link_to(__('Edit'), 'obj_member_introfriend', $introFriend->getMember()) . '<br>';
+    }
+    $list[$img] .= link_to(__('Delete'), 'obj_introfriend_delete', $introFriend) . '</p>';
   }
 }
 $options = array(
@@ -25,4 +27,4 @@ $options = array(
 );
 include_list_box('introFriend', $list, $options);
 
-echo pager_navigation($pager, 'introfriend/list?page=%d&id=' . $sf_params->get('id'), false);
+echo pager_navigation($pager, '@obj_introfriend?id='.$id.'&page=%d', false);

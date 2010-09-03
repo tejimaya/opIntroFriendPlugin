@@ -1,7 +1,7 @@
 Navigation:
   introfriend_navigation_index:
     type: "friend"
-    uri: "introfriend/index"
+    uri: "@introfriend"
     sort_order: 21
     Translation:
       ja_JP:

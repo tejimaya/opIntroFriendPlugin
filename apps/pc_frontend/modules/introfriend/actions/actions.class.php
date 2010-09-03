@@ -18,14 +18,4 @@
  */
 class introfriendActions extends opIntroFriendPluginIntroFriendActions 
 {
- /**
-  * Executes list action
-  *
-  * @param sfRequest $request A request object
-  */
-  public function executeList($request)
-  {
-    $this->introList = Doctrine::getTable('IntroFriend')->getByTo($this->id);
-    if(!count($this->introList)) { return sfView::ERROR; }
-  }
 }
