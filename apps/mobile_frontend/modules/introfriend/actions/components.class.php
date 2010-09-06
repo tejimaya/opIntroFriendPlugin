@@ -11,7 +11,8 @@ class introfriendComponents extends sfComponents
   public function executeIntroFriendLink($request)
   {
     $this->isFriend = true;
-    $relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($this->getUser()->getMemberId(), $request->getParameter('id'));
+    $this->count = Doctrine::getTable('IntroFriend')->getCount($this->id);
+    $relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
     if ($relation == null)
     {
       $this->isFriend = false;

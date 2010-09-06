@@ -94,18 +94,14 @@ class PluginIntroFriendTable extends Doctrine_Table
 
   /**
    * Get Count
-   * @param int $member_id_to member id
+   * @param int $memberIdTo member id
    * @return int count
    */
-  public function getCount($member_id_to)
+  public function getCount($memberIdTo)
   {
-    $introFriends = $this->find($member_id_to);
-    if (!$introFriends)
-    {
-      return 0;
-    }
-
-    return $introFriends->count();
+    return $this->createQuery()
+      ->where('member_id_to = ?', $memberIdTo)
+      ->count();
   }
 
   /**
