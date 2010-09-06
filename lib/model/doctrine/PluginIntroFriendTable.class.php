@@ -4,30 +4,12 @@
 class PluginIntroFriendTable extends Doctrine_Table
 {
   /**
-   * not friend delete essay
-   * @param int $id check member id
-   */
-  public function deleteCheck($memberIdTo)
-  {
-    $introFriends = Doctrine::getTable('MemberRelationship')->createQuery()
-      ->where('member_id_to = ?', $memberIdTo)
-      ->leftJoin('MemberRelationship')
-      ->addWhere('is_friend = ?', false)
-      ->execute();
-
-    foreach ($introFriends as $introFriend) {
-      $introFriend->delete();
-    }
-  }
-
-  /**
    * Get introFriend from member_id_to
    * @param int $memberIdTo member id
    * @return array array
    */
   public function getByTo($memberIdTo)
   {
-    $this->deleteCheck($memberIdTo);
     $introFriends = $this->createQuery()
       ->select('content, member_id_from')
       ->where('member_id_to = ?', $memberIdTo)
@@ -51,7 +33,6 @@ class PluginIntroFriendTable extends Doctrine_Table
    */
   public function getComponentByTo($memberIdTo)
   {
-    $this->deleteCheck($memberIdTo);
     $introFriends = $this->createQuery()
       ->where('member_id_to = ?', $memberIdTo)
       ->orderBy('id')
@@ -99,7 +80,6 @@ class PluginIntroFriendTable extends Doctrine_Table
    */
   public function getListPager($memberIdTo, $page = 1, $size = 20)
   {
-    $this->deleteCheck($memberIdTo);
     $q = Doctrine::getTable('IntroFriend')->createQuery()
       ->where('member_id_to = ?', $memberIdTo)
       ->orderBy('id');
