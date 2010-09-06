@@ -68,7 +68,11 @@
         <source>Not your friend</source>
         <target>フレンドではありません。</target>
       </trans-unit>
- 
+
+      <trans-unit id="16">
+        <source>A friend's introductory essay does not exists.</source>
+        <target>フレンドの紹介文はありません。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
