@@ -20,7 +20,7 @@ obj_introfriend_delete:
   url:   /introfriend/delete/:id
   class:   sfDoctrineRoute
   param: { module: introfriend, action: delete }
-  options: { model: Member, type: object }
+  options: { model: IntroFriend, type: object }
   requirements:
     id: \d+
     sf_method: [get, post]
