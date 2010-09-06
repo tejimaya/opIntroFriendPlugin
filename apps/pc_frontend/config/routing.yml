@@ -7,12 +7,6 @@ obj_member_introfriend:
     id: \d+
     sf_method: [get, post]
 
-introfriend:
-  url:   /introfriend/list
-  param: { module: introfriend, action: list }
-  requirements:
-    sf_method: [get, post]
-
 obj_introfriend:
   url:   /introfriend/list/:id
   class:   sfDoctrineRoute

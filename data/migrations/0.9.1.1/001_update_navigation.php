@@ -13,7 +13,7 @@ class Revision1_updateNavigation extends opMigration
   {
     opDoctrineQuery::create()
       ->update('Navigation n')
-      ->set('n.uri', '@introfriend')
+      ->set('n.uri', '@obj_member_introfriend')
       ->where('n.uri = ?', 'introfriend/index')
       ->execute();
   }

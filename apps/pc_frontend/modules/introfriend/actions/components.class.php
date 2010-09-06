@@ -12,6 +12,7 @@ class introfriendComponents extends sfComponents
   {
     $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
   }
+
   public function executeIntroFriendList()
   {
     $this->introList = Doctrine::getTable('IntroFriend')->getComponentByTo($this->id);
