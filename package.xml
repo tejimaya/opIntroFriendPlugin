@@ -20,7 +20,7 @@
   <active>yes</active>
  </developer>
  <date>2010-09-06</date>
- <time>21:21:39</time>
+ <time>22:07:58</time>
  <version>
   <release>0.9.1.1</release>
   <api>0.9.1.1</api>
@@ -66,11 +66,11 @@
    <file baseinstalldir="/" md5sum="6f5cc5dd67c681fc9e480a3229a4b1eb" name="apps/pc_frontend/modules/introfriend/templates/_introFriendManage.php" role="data" />
    <file baseinstalldir="/" md5sum="b727c9aa96e34cbbd17386993c241fb2" name="apps/pc_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="bba3b13deb1bd5ec2928246d510abce1" name="config/app.yml" role="data" />
-   <file baseinstalldir="/" md5sum="e0373b1914bb51a444f68e15ba3a0018" name="config/doctrine/schema.yml" role="data" />
+   <file baseinstalldir="/" md5sum="0ad64bb4d22d9107ae3be07bcc51444e" name="config/doctrine/schema.yml" role="data" />
    <file baseinstalldir="/" md5sum="19b8f1f7b616ca3d9d8ce94afb34226b" name="data/fixtures/000_revision.yml" role="data" />
    <file baseinstalldir="/" md5sum="a005980ae9780306ef2bef2ca4ff5f13" name="data/fixtures/010_navigation.yml" role="data" />
    <file baseinstalldir="/" md5sum="d75b2f1f002449af8b74acfdd3d52ca8" name="data/migrations/0.9.1.1/001_update_navigation.php" role="data" />
-   <file baseinstalldir="/" md5sum="9452945bad3228f9981a6121bc4e9d32" name="data/migrations/0.9.1.1/002_add_index.php" role="data" />
+   <file baseinstalldir="/" md5sum="acb103ca4660fd8109850b9ad8935c06" name="data/migrations/0.9.1.1/002_add_index.php" role="data" />
    <file baseinstalldir="/" md5sum="8963e8eea62c94c08d954b1caa06b6b8" name="i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="bc85481eb45a3543fd8407a3b6b2e10e" name="lib/action/opIntroFriendPluginIntroFriendActions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f4f267b83ce51e6280c707906242447c" name="lib/filter/doctrine/PluginIntroFriendFormFilter.class.php" role="data" />
