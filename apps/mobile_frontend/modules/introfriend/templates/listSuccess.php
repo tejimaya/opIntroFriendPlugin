@@ -10,16 +10,16 @@ foreach ($pager->getResults() as $i => $introFriend)
 {
   $member = $introFriend->getMember_2();
   $list[$i] = '<p>' . __('Name') . ' :</p>'
-          . '<p>' . link_to($member->getName(), 'member_profile', $member) . '</p>'
+          . '<p>' . link_to($member->getName(), '@member_profile?id='.$member->getId()) . '</p>'
           . '<p>' . __('Introductory essay') . ' :</p>'
           . nl2br($introFriend->getContent());
 
   if ($id == $sf_user->getMemberId() || $member->getId() == $sf_user->getMemberId()) {
     if ($member->getId() == $sf_user->getMemberId())
     {
-      $list[$img] .= '<p>' . link_to(__('Edit'), 'obj_member_introfriend', $introFriend->getMember()) . '<br>';
+      $list[$i] .= '<p>' . link_to(__('Edit'), 'obj_member_introfriend', $introFriend->getMember()) . '<br>';
     }
-    $list[$img] .= link_to(__('Delete'), 'obj_introfriend_delete', $introFriend) . '</p>';
+    $list[$i] .= link_to(__('Delete'), 'obj_introfriend_delete', $introFriend) . '</p>';
   }
 }
 $options = array(
