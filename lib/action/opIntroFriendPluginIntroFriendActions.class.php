@@ -29,6 +29,10 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
       {
         $this->member = $object;
       }
+      if ($object instanceof IntroFriend)
+      {
+        $this->introFriend = $object;
+      }
     }
 
     if (empty($this->member))
@@ -98,22 +102,18 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   */
   public function executeDelete($request)
   {
-    if (!$this->friendCheck())
-    {
-      return sfView::ERROR;
-    }
-    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
-    $this->forward404Unless($this->introFriend, 'Undefined member.');
-    if ($request->isMethod('post'))
-    {
-      if ($request->hasParameter('delete'))
-      {
-        $request->checkCSRFProtection();
-        if (isset($this->introFriend)) $this->introFriend->delete();
-        $this->redirect('member/profile?id=' . $this->id);
-      }
-      $this->redirect('introfriend/list?id=' . $this->id);
-    }
+    $memberIdTo = $this->introFriend->getMemberIdTo();
+    $memberIdFrom = $this->introFriend->getMemberIdFrom();
+    $this->forward404If($this->id != $memberIdTo && $this->id != $memberIdFrom);
+     if ($request->isMethod('post'))
+     {
+      $friendId = $this->id == $memberIdTo ? $memberIdFrom : $memberIdTo;
+       if ($request->hasParameter('delete'))
+       {
+        $this->introFriend->delete();
+       }
+      $this->redirect('@obj_introfriend?id='.$friendId);
+     }
   }
 
  /**
