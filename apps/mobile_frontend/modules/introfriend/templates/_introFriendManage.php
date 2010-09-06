@@ -7,6 +7,6 @@ if ($introFriend)
 }
 else
 {
-  echo '[' . link_to(__('Write introductory essay'), 'introfriend/index?id=' . $id) . ']';
+  echo '[' . link_to(__('Write introductory essay'), '@obj_member_introfriend?id='.$id) . ']';
 }
 ?>

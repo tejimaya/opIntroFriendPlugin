@@ -6,7 +6,7 @@ if ($introFriend) {
   . link_to(__('Delete'), 'obj_introfriend_delete', $introFriend) . '</p>';
 }
 else {
-  echo '<p>' . link_to(__('Write introductory essay'), '@obj_member_introfriend?id='.$member) . '</p>';
+  echo '<p>' . link_to(__('Write introductory essay'), '@obj_member_introfriend?id='.$id) . '</p>';
 }
 ?>
 </td>
