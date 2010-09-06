@@ -13,10 +13,6 @@ IntroFriend:
     Member_2: { class: Member, local: member_id_from, foreign: id }
     MemberRelationship: { local: member_id_to, foreign: member_id_to }
   indexes:
-    member_id_to:
-      fields: [member_id_to]
-    member_id_from:
-      fields: [member_id_from]
     created_at:
       fields: [created_at]
     member_id_from_member_id_to:
