@@ -9,12 +9,21 @@
  */
 class Revision1_updateNavigation extends opMigration
 {
-  public function migrate($direction)
+  public function up()
   {
-    opDoctrineQuery::create()
-      ->update('Navigation n')
-      ->set('n.uri', '@obj_member_introfriend')
+    Doctrine::getTable('Navigation')->createQuery('n')
+      ->update()
+      ->set('n.uri', '?', '@obj_member_introfriend')
       ->where('n.uri = ?', 'introfriend/index')
+      ->execute();
+  }
+
+  public function down()
+  {
+    Doctrine::getTable('Navigation')->createQuery('n')
+      ->update()
+      ->set('n.uri', '?', 'introfriend/index')
+      ->where('n.uri = ?', '@obj_member_introfriend')
       ->execute();
   }
 }
