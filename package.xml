@@ -19,18 +19,18 @@
   <email />
   <active>yes</active>
  </developer>
- <date>2010-09-06</date>
- <time>22:07:58</time>
+ <date>2010-09-08</date>
+ <time>13:16:30</time>
  <version>
-  <release>0.9.1.1</release>
-  <api>0.9.1.1</api>
+  <release>0.9.1.2</release>
+  <api>0.9.1.2</api>
  </version>
  <stability>
   <release>beta</release>
   <api>beta</api>
  </stability>
  <license>apache</license>
- <notes>fixed more bugs.</notes>
+ <notes>fixed migrate bug.</notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="0ff238a1ee42da98eec4232ccd6d4284" name="apps/mobile_frontend/config/routing.yml" role="data" />
@@ -69,8 +69,8 @@
    <file baseinstalldir="/" md5sum="0ad64bb4d22d9107ae3be07bcc51444e" name="config/doctrine/schema.yml" role="data" />
    <file baseinstalldir="/" md5sum="19b8f1f7b616ca3d9d8ce94afb34226b" name="data/fixtures/000_revision.yml" role="data" />
    <file baseinstalldir="/" md5sum="a005980ae9780306ef2bef2ca4ff5f13" name="data/fixtures/010_navigation.yml" role="data" />
-   <file baseinstalldir="/" md5sum="d75b2f1f002449af8b74acfdd3d52ca8" name="data/migrations/0.9.1.1/001_update_navigation.php" role="data" />
-   <file baseinstalldir="/" md5sum="acb103ca4660fd8109850b9ad8935c06" name="data/migrations/0.9.1.1/002_add_index.php" role="data" />
+   <file baseinstalldir="/" md5sum="a0eea5db8aebe43d06a0d1a7363eb3b8" name="data/migrations/0.9.1.1/001_update_navigation.php" role="data" />
+   <file baseinstalldir="/" md5sum="379a9eb315f91890a6c865eab46932f4" name="data/migrations/0.9.1.1/002_add_index.php" role="data" />
    <file baseinstalldir="/" md5sum="8963e8eea62c94c08d954b1caa06b6b8" name="i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="bc85481eb45a3543fd8407a3b6b2e10e" name="lib/action/opIntroFriendPluginIntroFriendActions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="f4f267b83ce51e6280c707906242447c" name="lib/filter/doctrine/PluginIntroFriendFormFilter.class.php" role="data" />
@@ -135,6 +135,19 @@
    <date>2010-09-06</date>
    <license>apache</license>
    <notes>fixed more bugs.</notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.1.2</release>
+    <api>0.9.1.2</api>
+   </version>
+   <stability>
+    <release>beta</release>
+    <api>beta</api>
+   </stability>
+   <date>2010-09-08</date>
+   <license>apache</license>
+   <notes>fixed migrate bug.</notes>
   </release>
  </changelog>
 </package>
