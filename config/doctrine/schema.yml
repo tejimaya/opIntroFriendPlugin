@@ -9,8 +9,8 @@ IntroFriend:
     member_id_from: { type: integer(4), notnull: true }
     content: { type: string, notnull: true }
   relations:
-    Member: { local: member_id_to, foreign: id }
-    Member_2: { class: Member, local: member_id_from, foreign: id }
+    Member: { local: member_id_to, foreign: id, onDelete: cascade }
+    Member_2: { class: Member, local: member_id_from, foreign: id, onDelete: cascade }
     MemberRelationship: { local: member_id_to, foreign: member_id_to }
   indexes:
     created_at:

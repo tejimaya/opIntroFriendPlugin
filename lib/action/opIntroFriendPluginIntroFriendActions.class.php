@@ -28,6 +28,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
       if ($object instanceof Member)
       {
         $this->member = $object;
+        $this->relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($this->getUser()->getMemberId(), $this->member->getId());
       }
       if ($object instanceof IntroFriend)
       {
@@ -46,6 +47,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     {
       sfConfig::set('sf_nav_type', 'friend');
     }
+
   }
 
  /**
@@ -59,6 +61,7 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     {
       return sfView::ERROR;
     }
+
     $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->getMemberId(), $this->id);
     $this->form = new IntroFriendForm($this->introFriend);
     if ($request->isMethod('post'))
@@ -105,15 +108,14 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
     $memberIdTo = $this->introFriend->getMemberIdTo();
     $memberIdFrom = $this->introFriend->getMemberIdFrom();
     $this->forward404If($this->id != $memberIdTo && $this->id != $memberIdFrom);
-     if ($request->isMethod('post'))
-     {
-      $friendId = $this->id == $memberIdTo ? $memberIdFrom : $memberIdTo;
-       if ($request->hasParameter('delete'))
-       {
-        $this->introFriend->delete();
-       }
-      $this->redirect('@obj_introfriend?id='.$friendId);
-     }
+    $this->friendId = $this->id == $memberIdTo ? $memberIdFrom : $memberIdTo;
+
+    if ($request->isMethod('post'))
+    {
+      $request->checkCSRFProtection();
+      $this->introFriend->delete();
+      $this->redirect('member/profile?id='.$this->friendId);
+    }
   }
 
  /**

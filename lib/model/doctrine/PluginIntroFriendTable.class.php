@@ -4,38 +4,13 @@
 class PluginIntroFriendTable extends Doctrine_Table
 {
   /**
-   * Get introFriend from member_id_to
-   * @param int $memberIdTo member id
-   * @return array array
-   */
-  public function getByTo($memberIdTo)
-  {
-    $introFriends = $this->createQuery()
-      ->select('content, member_id_from')
-      ->where('member_id_to = ?', $memberIdTo)
-      ->orderBy('id')
-      ->execute(array(), Doctrine::HYDRATE_NONE);
-
-    $list = array();
-    foreach ($introFriends as $i => $introFriend) {
-      $list[$i] = array();
-      $list[$i]['essay'] = $introFriend[0];
-      $list[$i]['member'] = $introFriend[1];
-    }
-
-    return $list;
-  }
-
-  /**
    * Get ByTo from Component
    * @param int $memberIdTo member id
    * @return array object array
    */
   public function getComponentByTo($memberIdTo)
   {
-    $introFriends = $this->createQuery()
-      ->where('member_id_to = ?', $memberIdTo)
-      ->orderBy('id')
+    $introFriends = $this->getListQuery($memberIdTo)
       ->limit(sfConfig::get('app_max_introfriend'))
       ->execute();
 
@@ -80,16 +55,19 @@ class PluginIntroFriendTable extends Doctrine_Table
    */
   public function getListPager($memberIdTo, $page = 1, $size = 20)
   {
-    $q = Doctrine::getTable('IntroFriend')->createQuery()
-      ->where('member_id_to = ?', $memberIdTo)
-      ->orderBy('id');
-
     $pager = new sfDoctrinePager('IntroFriend', $size);
-    $pager->setQuery($q);
+    $pager->setQuery($this->getListQuery($memberIdTo));
     $pager->setPage($page);
     $pager->init();
 
     return $pager;
+  }
+
+  public function getListQuery($memberIdTo)
+  {
+    return Doctrine::getTable('IntroFriend')->createQuery()
+      ->where('member_id_to = ?', $memberIdTo)
+      ->orderBy('id');
   }
 
   /**
@@ -99,22 +77,6 @@ class PluginIntroFriendTable extends Doctrine_Table
    */
   public function getCount($memberIdTo)
   {
-    return $this->createQuery()
-      ->where('member_id_to = ?', $memberIdTo)
-      ->count();
-  }
-
-  /**
-   * Get to member
-   * @param array $introFriends IntroFriend array
-   * @return array Member array
-   */
-  public function getWriters($introFriends)
-  {
-    $writers = array();
-    foreach ($introFriends as $i => $introFriend) {
-      $writers[$i] = $this->getTable('Member')->find($introFriend->getMemberIdFrom());
-    }
-    return $writers;
+    return $this->getListQuery($memberIdTo)->count();
   }
 }

@@ -19,7 +19,7 @@ class introfriendComponents extends sfComponents
     }
     else
     {
-      if(!$relation->getIsFriend())
+      if(!$relation->getIsFriend() || $relation->isAccessBlocked())
       {
         $this->isFriend = false;
       }
@@ -28,6 +28,12 @@ class introfriendComponents extends sfComponents
 
   public function executeIntroFriendManage($request)
   {
+    $this->relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($this->getUser()->getMemberId(), $this->id);
+    if ($this->relation->isAccessBlocked())
+    {
+      return sfView::NONE;
+    }
+
     $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($this->getUser()->GetMemberId(), $this->id);
   }
 }

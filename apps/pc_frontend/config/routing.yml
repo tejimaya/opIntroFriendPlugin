@@ -1,17 +1,17 @@
 obj_member_introfriend:
   url:   /introfriend/:id
-  class:   sfDoctrineRoute
+  class:   opDynamicAclRoute
   param: { module: introfriend, action: index }
-  options: { model: Member, type: object }
+  options: { model: Member, type: object, privilege: view }
   requirements:
     id: \d+
     sf_method: [get, post]
 
 obj_introfriend:
   url:   /introfriend/list/:id
-  class:   sfDoctrineRoute
+  class:   opDynamicAclRoute
   param: { module: introfriend, action: list }
-  options: { model: Member, type: object }
+  options: { model: Member, type: object, privilege: view }
   requirements:
     id: \d+
     sf_method: [get, post]
