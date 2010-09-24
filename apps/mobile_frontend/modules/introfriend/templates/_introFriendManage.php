@@ -3,7 +3,7 @@ if ($introFriend)
 {
   echo '<p>' . $introFriend->getContent() . '</p><p>'
   . '[' . link_to(__('Edit'), 'obj_member_introfriend', $introFriend->getMember()) . '] '
-  . '[' . link_to(__('Delete'), 'obj_introfriend_delete', $introFriend) . ']</p>';
+  . '[' . link_to(__('Delete'), 'obj_introfriend_delete', $introFriend->getMember()) . ']</p>';
 }
 else
 {

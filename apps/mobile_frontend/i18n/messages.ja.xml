@@ -68,7 +68,11 @@
         <source>Not your friend</source>
         <target>フレンドではありません。</target>
       </trans-unit>
- 
+
+      <trans-unit id="16">
+        <source>The introductory essay was deleted.</source>
+        <target>紹介文を削除しました。</target>
+      </trans-unit>
    </body>
   </file>
 </xliff>

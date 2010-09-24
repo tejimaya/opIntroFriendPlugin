@@ -30,10 +30,6 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
         $this->member = $object;
         $this->relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($this->getUser()->getMemberId(), $this->member->getId());
       }
-      if ($object instanceof IntroFriend)
-      {
-        $this->introFriend = $object;
-      }
     }
 
     if (empty($this->member))
@@ -105,16 +101,39 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   */
   public function executeDelete($request)
   {
-    $memberIdTo = $this->introFriend->getMemberIdTo();
-    $memberIdFrom = $this->introFriend->getMemberIdFrom();
-    $this->forward404If($this->id != $memberIdTo && $this->id != $memberIdFrom);
-    $this->friendId = $this->id == $memberIdTo ? $memberIdFrom : $memberIdTo;
+    switch ($request->getParameter('target'))
+    {
+    case 'friend':
+      $fromId = $this->id;
+      $toId = $this->getUser()->getMemberId();
+      break;
+    case 'my':
+    default:
+      $fromId = $this->getUser()->getMemberId();
+      $toId = $this->id;
+      break;
+    }
+    $this->introFriend = Doctrine::getTable('IntroFriend')->getByFromAndTo($fromId, $toId);
+    $this->forward404Unless($this->introFriend);
 
+    // return uri
+    switch ($request->getParameter('from'))
+    {
+    case 'list':
+      $this->uri = $this->getController()->genUrl('@obj_introfriend?id='.$toId);
+      break;
+    case 'manage':
+    default:
+      $this->uri = $this->getController()->genUrl('@friend_manage');
+    }
+
+    // delete
     if ($request->isMethod('post'))
     {
       $request->checkCSRFProtection();
       $this->introFriend->delete();
-      $this->redirect('member/profile?id='.$this->friendId);
+      $this->getUser()->setFlash('notice', 'The introductory essay was deleted.');
+      $this->redirect($this->uri);
     }
   }
 

@@ -14,12 +14,21 @@ foreach ($pager->getResults() as $i => $introFriend)
           . '<p>' . __('Introductory essay') . ' :</p>'
           . nl2br($introFriend->getContent());
 
-  if ($id == $sf_user->getMemberId() || $member->getId() == $sf_user->getMemberId()) {
+  $options = array('from' => 'list');
+  if ($id == $sf_user->getMemberId() || $member->getId() == $sf_user->getMemberId())
+  {
     if ($member->getId() == $sf_user->getMemberId())
     {
       $list[$i] .= '<p>' . link_to(__('Edit'), 'obj_member_introfriend', $introFriend->getMember()) . '<br>';
+      $options['target'] = 'my';
+      $options['sf_subject'] = $introFriend->getMember();
     }
-    $list[$i] .= link_to(__('Delete'), 'obj_introfriend_delete', $introFriend) . '</p>';
+    else
+    {
+      $options['target'] = 'friend';
+      $options['sf_subject'] = $introFriend->getMember_2();
+    }
+    $list[$i] .= link_to(__('Delete'), 'obj_introfriend_delete', $options);
   }
 }
 $options = array(

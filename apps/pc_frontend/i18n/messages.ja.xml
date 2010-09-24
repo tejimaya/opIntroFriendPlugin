@@ -73,6 +73,10 @@
         <source>A friend's introductory essay does not exists.</source>
         <target>フレンドの紹介文はありません。</target>
       </trans-unit>
+      <trans-unit id="17">
+        <source>The introductory essay was deleted.</source>
+        <target>紹介文を削除しました。</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>

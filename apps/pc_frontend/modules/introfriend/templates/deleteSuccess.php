@@ -2,6 +2,6 @@
   'yes_form' => new BaseForm(),
   'yes_method' => 'post',
   'no_method' => 'get',
-  'no_url' => url_for('@obj_introfriend?id='.$friendId),
+  'no_url' => $uri,
   'title' => __('Do you really delete it?'),
 )) ?>

@@ -17,10 +17,10 @@ obj_introfriend:
     sf_method: [get, post]
 
 obj_introfriend_delete:
-  url:   /introfriend/delete/:id
-  class:   sfDoctrineRoute
-  param: { module: introfriend, action: delete }
-  options: { model: IntroFriend, type: object }
+  url:   /introfriend/:from/:target/delete/:id
+  class:   opDynamicAclRoute
+  param: { module: introfriend, action: delete, from: manage, target: my }
+  options: { model: Member, type: object, privilege: view }
   requirements:
     id: \d+
     sf_method: [get, post]
