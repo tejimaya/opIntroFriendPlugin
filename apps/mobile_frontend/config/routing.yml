@@ -1,4 +1,3 @@
-# openpne rules
 obj_member_introfriend:
   url:   /introfriend/:id
   class:   opDynamicAclRoute
@@ -13,36 +12,6 @@ obj_introfriend:
   class:   opDynamicAclRoute
   param: { module: introfriend, action: list }
   options: { model: Member, type: object, privilege: view }
-  requirements:
-    id: \d+
-    sf_method: [get, post]
-
-obj_introfriend_delete:
-  url:   /introfriend/delete/:id
-  class:   sfDoctrineRoute
-  param: { module: introfriend, action: delete }
-  options: { model: IntroFriend, type: object }
-  requirements:
-    id: \d+
-    sf_method: [get, post]
-
-introfriend_default_error:
-  url: /introfriend/*
-  param: { module: default, action: error }
-obj_member_introfriend:
-  url:   /introfriend/:id
-  class:   sfDoctrineRoute
-  param: { module: introfriend, action: index }
-  options: { model: Member, type: object }
-  requirements:
-    id: \d+
-    sf_method: [get, post]
-
-obj_introfriend:
-  url:   /introfriend/list/:id
-  class:   sfDoctrineRoute
-  param: { module: introfriend, action: list }
-  options: { model: Member, type: object }
   requirements:
     id: \d+
     sf_method: [get, post]
