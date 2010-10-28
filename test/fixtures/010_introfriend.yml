@@ -1,0 +1,10 @@
+IntroFriend:
+  introfriend_first_to_third:
+    Member: third_member
+    Member_2: first_member
+    content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"
+
+  introfriend_third_to_first:
+    Member: first_member
+    Member_2: third_member
+    content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"

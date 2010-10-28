@@ -1,0 +1,52 @@
+Member:
+  first_member:
+    id: 1
+    name: "A"
+    is_active: 1
+
+  second_member:
+    id: 2
+    name: "B"
+    is_active: 1
+
+  third_member:
+    id: 3
+    name: "<&\"'>Member.name ESCAPING HTML TEST DATA"
+    is_active: 1
+
+MemberConfig:
+  first_member_member_config_pc_address:
+    name: "pc_address"
+    value: "sns@example.com"
+    Member: first_member
+
+  first_member_member_config_pc_address:
+    name: "mobile_address"
+    value: "sns@example.com"
+    Member: first_member
+
+  first_member_member_config_password:
+    name: "password"
+    value: <?php echo md5('password') . "\n"; ?>
+    Member: first_member
+
+MemberRelationship:
+  first_member_second_member:
+    Member: first_member
+    MemberRelatedByMemberIdFrom: second_member
+    is_friend: 1
+
+  second_member_first_member:
+    Member: second_member
+    MemberRelatedByMemberIdFrom: first_member
+    is_friend: 1
+
+  first_member_third_member:
+    Member: first_member
+    MemberRelatedByMemberIdFrom: third_member
+    is_friend: 1
+
+  third_member_first_member:
+    Member: third_member
+    MemberRelatedByMemberIdFrom: first_member
+    is_friend: 1
