@@ -1,5 +1,4 @@
-<?php
-
+<?php 
 /**
  * This file is part of the OpenPNE package.
  * (c) OpenPNE Project (http://www.openpne.jp/)
@@ -21,10 +20,9 @@ $browser
 // CSRF
   ->info('/introfriend/2 - CSRF')
   ->post('/introfriend/2')
-  ->checkCSRF()
-
-  ->info('/introfriend/delete/3 - CSRF')
-  ->post('/introfriend/delete/3')
+  ->checkCSRF(array('<input type="hidden" name="intro_friend\[_csrf_token\]" id="intro_friend__csrf_token" /><font color="#FF0000">'."\n".'<br>必須項目です。'))
+  ->info('/introfriend/manage/my/delete/3 - CSRF')
+  ->post('/introfriend/manage/my/delete/3')
   ->checkCSRF()
 
 // XSS
