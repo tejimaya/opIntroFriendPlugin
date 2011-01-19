@@ -12,7 +12,7 @@ include dirname(__FILE__).'/../../bootstrap/functional.php';
 include dirname(__FILE__).'/../../bootstrap/database.php';
 
 $browser = new opTestFunctional(new opBrowser(), new lime_test(null, new lime_output_color()));
-echo $browser
+$browser
   ->info('Login')
   ->login('sns@example.com', 'password')
   ->isStatusCode(302)
@@ -37,9 +37,6 @@ echo $browser
 // XSS
   ->info('/member/3 - XSS')
   ->get('/member/3')
-  ->getResponse()->getContent();
-  exit;
-  $browser
   ->with('html_escape')->begin()
     ->isAllEscapedData('Member', 'name')
     ->isAllEscapedData('IntroFriend', 'content')

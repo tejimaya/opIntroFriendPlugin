@@ -1,4 +1,5 @@
 <?php 
+
 /**
  * This file is part of the OpenPNE package.
  * (c) OpenPNE Project (http://www.openpne.jp/)
