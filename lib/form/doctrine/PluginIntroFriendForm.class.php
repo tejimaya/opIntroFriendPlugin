@@ -20,7 +20,13 @@ abstract class PluginIntroFriendForm extends BaseIntroFriendForm
   public function setup()
   {
     parent::setup();
-    unset($this['created_at'], $this['updated_at'], $this['member_id_to'], $this['member_id_from']);
+    unset(
+      $this['id'],
+      $this['created_at'],
+      $this['updated_at'],
+      $this['member_id_to'],
+      $this['member_id_from']
+    );
     $this->setWidget('content', new sfWidgetFormTextarea());
     $this->widgetSchema->setLabel('content', 'Introductory essay');
 
