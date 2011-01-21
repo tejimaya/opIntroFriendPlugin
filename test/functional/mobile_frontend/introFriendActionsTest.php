@@ -8,6 +8,7 @@
  * file and the NOTICE file that were distributed with this source code.
  */
 
+$_app = 'mobile_frontend';
 include dirname(__FILE__).'/../../bootstrap/functional.php';
 include dirname(__FILE__).'/../../bootstrap/database.php';
 

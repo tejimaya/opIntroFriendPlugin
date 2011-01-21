@@ -79,4 +79,25 @@ class PluginIntroFriendTable extends Doctrine_Table
   {
     return $this->getListQuery($memberIdTo)->count();
   }
+
+  public function deleteNonFriend($memberId, $memberId2)
+  {
+    $relation = Doctrine::getTable('MemberRelationship')->retrieveByFromAndTo($memberId, $memberId2);
+    if ($relation && $relation->getIsFriend())
+    {
+      return;
+    }
+
+    Doctrine::getTable('IntroFriend')->createQuery()
+      ->delete()
+      ->where('member_id_to = ?', $memberId)
+      ->andWhere('member_id_from = ?', $memberId2)
+      ->execute();
+
+    Doctrine::getTable('IntroFriend')->createQuery()
+      ->delete()
+      ->where('member_id_from = ?', $memberId)
+      ->andWhere('member_id_to = ?', $memberId2)
+      ->execute();
+  }
 }

@@ -14,6 +14,16 @@ Member:
     name: "<&\"'>Member.name ESCAPING HTML TEST DATA"
     is_active: 1
 
+  fourth_member:
+    id: 4
+    name: "<&\"'>Member.name ESCAPING HTML TEST DATA"
+    is_active: 1
+
+  fifth_member:
+    id: 5
+    name: "<&\"'>Member.name ESCAPING HTML TEST DATA"
+    is_active: 1
+
 MemberConfig:
   first_member_member_config_pc_address:
     name: "pc_address"
@@ -49,4 +59,24 @@ MemberRelationship:
   third_member_first_member:
     Member: third_member
     MemberRelatedByMemberIdFrom: first_member
+    is_friend: 1
+
+  fourth_member_first_member:
+    Member: fourth_member
+    MemberRelatedByMemberIdFrom: first_member
+    is_friend: 0
+
+  first_member_fourth_member:
+    Member: first_member
+    MemberRelatedByMemberIdFrom: fourth_member
+    is_friend: 0
+
+  fifth_member_first_member:
+    Member: fifth_member
+    MemberRelatedByMemberIdFrom: first_member
+    is_friend: 1
+
+  first_member_fifth_member:
+    Member: first_member
+    MemberRelatedByMemberIdFrom: fifth_member
     is_friend: 1

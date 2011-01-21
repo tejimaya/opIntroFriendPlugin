@@ -1,10 +1,29 @@
 IntroFriend:
+# friend reciprocal
   introfriend_first_to_third:
     Member: third_member
     Member_2: first_member
     content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"
-
   introfriend_third_to_first:
     Member: first_member
     Member_2: third_member
+    content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"
+# friend one side
+  introfriend_first_to_second:
+    Member: second_member
+    Member_2: first_member
+    content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"
+# not friend reciprocal
+  introfriend_not_friend_third_to_second:
+    Member: second_member
+    Member_2: third_member
+    content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"
+  introfriend_not_friend_second_to_third:
+    Member: third_member
+    Member_2: second_member
+    content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"
+# not friend one side
+  introfriend_not_friend_fourth_to_first:
+    Member: first_member
+    Member_2: fourth_member
     content: "<&\"'>IntroFriend.content ESCAPING HTML TEST DATA"
