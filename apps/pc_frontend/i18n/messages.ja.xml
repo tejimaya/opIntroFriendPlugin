@@ -7,8 +7,8 @@
         <target>全て見る</target>
       </trans-unit>
       <trans-unit id="2">
-        <source>Introductory essay from my friend</source>
-        <target>マイフレンドからの紹介文</target>
+        <source>Introductory essay from %my_friend%</source>
+        <target>%my_friend%からの紹介文</target>
       </trans-unit>i
 
       <trans-unit id="3">
@@ -65,13 +65,13 @@
         <target>エラー</target>
       </trans-unit>
       <trans-unit id="15">
-        <source>Not your friend</source>
-        <target>フレンドではありません。</target>
+        <source>Not your %friend%</source>
+        <target>%friend%ではありません。</target>
       </trans-unit>
 
       <trans-unit id="16">
-        <source>A friend's introductory essay does not exists.</source>
-        <target>フレンドの紹介文はありません。</target>
+        <source>A %friend%'s introductory essay does not exists.</source>
+        <target>%friend%の紹介文はありません。</target>
       </trans-unit>
       <trans-unit id="17">
         <source>The introductory essay was deleted.</source>
