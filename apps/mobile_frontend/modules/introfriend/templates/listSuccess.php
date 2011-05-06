@@ -1,5 +1,5 @@
 <?php
-op_mobile_page_title(__('Introductory essay from my friend'));
+op_mobile_page_title(__('Introductory essay from %my_friend%'));
 
 echo '<center>';
 echo pager_total($pager);
@@ -9,7 +9,7 @@ $list = array();
 foreach ($pager->getResults() as $i => $introFriend)
 {
   $member = $introFriend->getMember_2();
-  $list[$i] = '<p>' . __('Name') . ' :</p>'
+  $list[$i] = '<p>' . __('%Nickname%') . ' :</p>'
           . '<p>' . link_to($member->getName(), '@member_profile?id='.$member->getId()) . '</p>'
           . '<p>' . __('Introductory essay') . ' :</p>'
           . nl2br($introFriend->getContent());
