@@ -16,8 +16,8 @@
       </trans-unit>
 
       <trans-unit id="4">
-        <source>Introductory essay from my friend</source>
-        <target>マイフレンドからの紹介文</target>
+        <source>Introductory essay from %my_friend%</source>
+        <target>%my_friend%からの紹介文</target>
       </trans-unit>
 
       <trans-unit id="5">
@@ -47,10 +47,6 @@
         <target>作成しました</target>
       </trans-unit>
 
-      <trans-unit id="11">
-        <source>Name</source>
-        <target>氏名</target>
-      </trans-unit>
       <trans-unit id="12">
         <source>Introductory essay</source>
         <target>紹介文</target>
@@ -65,8 +61,8 @@
         <target>エラー</target>
       </trans-unit>
       <trans-unit id="15">
-        <source>Not your friend</source>
-        <target>フレンドではありません。</target>
+        <source>Not your %friend%</source>
+        <target>%friend%ではありません。</target>
       </trans-unit>
 
       <trans-unit id="16">

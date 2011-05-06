@@ -30,6 +30,6 @@ foreach ($pager->getResults() as $introFriend)
     $list[$img] .= '</li></ul>';
   }
 }
-include_list_box('introFriend', $list, array( 'title' => __('Introductory essay from my friend')));
+include_list_box('introFriend', $list, array( 'title' => __('Introductory essay from %my_friend%')));
 ?>
 <?php echo op_include_pager_navigation($pager, $pagerLink); ?>
