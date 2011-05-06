@@ -36,4 +36,4 @@ $options = array(
 );
 include_list_box('introFriend', $list, $options);
 
-echo pager_navigation($pager, '@obj_introfriend?id='.$id.'&page=%d', false);
+echo op_include_pager_navigation($pager, '@obj_introfriend?id='.$id.'&page=%d', array('is_total' => false));
