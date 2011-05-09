@@ -19,62 +19,64 @@
   <email />
   <active>yes</active>
  </developer>
- <date>2011-01-21</date>
- <time>22:48:38</time>
+ <date>2011-05-09</date>
+ <time>20:00:38</time>
  <version>
-  <release>0.9.2</release>
-  <api>0.9.2</api>
+  <release>0.9.2.1</release>
+  <api>0.9.2.1</api>
  </version>
  <stability>
-  <release>beta</release>
-  <api>beta</api>
+  <release>stable</release>
+  <api>stable</api>
  </stability>
  <license>apache</license>
  <notes>
-fixed the some bugs
+fixed bugs.
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
    <file baseinstalldir="/" md5sum="444d5019c85df924677f181d63313c2d" name="apps/mobile_frontend/config/routing.yml" role="data" />
-   <file baseinstalldir="/" md5sum="68bd5823723f0feadae77eb7715d7a6b" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="11b20533298abb39ca531f65464db528" name="apps/mobile_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="d30b8f45016bd77ba4c6066e57a6cf09" name="apps/mobile_frontend/modules/friend/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="1076635cf8b47727918190f99d3a9846" name="apps/mobile_frontend/modules/introfriend/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="c5860e3a2fb16b47429a3b8e6d296e8c" name="apps/mobile_frontend/modules/introfriend/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/mobile_frontend/modules/introfriend/config/security.yml" role="data" />
-   <file baseinstalldir="/" md5sum="faa7fcb44e357d0968093a45523ff3ab" name="apps/mobile_frontend/modules/introfriend/templates/deleteError.php" role="data" />
+   <file baseinstalldir="/" md5sum="c133bb2459243f869bdf73b96f49844c" name="apps/mobile_frontend/modules/introfriend/templates/deleteError.php" role="data" />
    <file baseinstalldir="/" md5sum="4061c39023e286e0271e3450332d604d" name="apps/mobile_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="faa7fcb44e357d0968093a45523ff3ab" name="apps/mobile_frontend/modules/introfriend/templates/indexError.php" role="data" />
+   <file baseinstalldir="/" md5sum="c133bb2459243f869bdf73b96f49844c" name="apps/mobile_frontend/modules/introfriend/templates/indexError.php" role="data" />
    <file baseinstalldir="/" md5sum="0c23cf221ceaba7a53179c5289393242" name="apps/mobile_frontend/modules/introfriend/templates/indexInput.php" role="data" />
    <file baseinstalldir="/" md5sum="89ad186c5dbc490deec6b7edcaaebac8" name="apps/mobile_frontend/modules/introfriend/templates/indexSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="903570ec177bc9bd208773bfd862e84e" name="apps/mobile_frontend/modules/introfriend/templates/listError.php" role="data" />
-   <file baseinstalldir="/" md5sum="d1a7f7df2e999201e215b146f623831d" name="apps/mobile_frontend/modules/introfriend/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="44cf0e01dbe0fa9347724dfc22ae0e48" name="apps/mobile_frontend/modules/introfriend/templates/listError.php" role="data" />
+   <file baseinstalldir="/" md5sum="7974ab7c68c6169f39d98cf8355f1b95" name="apps/mobile_frontend/modules/introfriend/templates/listSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="1a11371481d90e64d32a447f90cbc36e" name="apps/mobile_frontend/modules/introfriend/templates/_introFriendLink.php" role="data" />
    <file baseinstalldir="/" md5sum="91101e913477398f39a11de54ace2655" name="apps/mobile_frontend/modules/introfriend/templates/_introFriendManage.php" role="data" />
    <file baseinstalldir="/" md5sum="9666f06fb0018707cee9af92888a5571" name="apps/mobile_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="444d5019c85df924677f181d63313c2d" name="apps/pc_frontend/config/routing.yml" role="data" />
-   <file baseinstalldir="/" md5sum="63adfacb324ebc4012d04d0179bbce11" name="apps/pc_frontend/i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="708d4d55d450bf0617fd59682e66f668" name="apps/pc_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="c4da5353b95a8313969e3f94f35202b4" name="apps/pc_frontend/modules/friend/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="1076635cf8b47727918190f99d3a9846" name="apps/pc_frontend/modules/introfriend/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="386f0a296973d86208e0390c5ba284cb" name="apps/pc_frontend/modules/introfriend/actions/components.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9cbbf2a71ebac31c5e9df7c44c2e0dec" name="apps/pc_frontend/modules/introfriend/config/security.yml" role="data" />
-   <file baseinstalldir="/" md5sum="028210493dacd1bcb7d6b775a3ccce95" name="apps/pc_frontend/modules/introfriend/templates/deleteError.php" role="data" />
+   <file baseinstalldir="/" md5sum="94656631321f1bb10b14732b5e707eb8" name="apps/pc_frontend/modules/introfriend/templates/deleteError.php" role="data" />
    <file baseinstalldir="/" md5sum="b7d73667975a8035e2e57268dde05958" name="apps/pc_frontend/modules/introfriend/templates/deleteSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="028210493dacd1bcb7d6b775a3ccce95" name="apps/pc_frontend/modules/introfriend/templates/indexError.php" role="data" />
+   <file baseinstalldir="/" md5sum="94656631321f1bb10b14732b5e707eb8" name="apps/pc_frontend/modules/introfriend/templates/indexError.php" role="data" />
    <file baseinstalldir="/" md5sum="7b0e0b05676ab016173ee0dc9f244ab3" name="apps/pc_frontend/modules/introfriend/templates/indexInput.php" role="data" />
    <file baseinstalldir="/" md5sum="c545cf92365a637f8ebcc8f4c3a561eb" name="apps/pc_frontend/modules/introfriend/templates/indexSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="467fda78e47f6829a248f27b0812888b" name="apps/pc_frontend/modules/introfriend/templates/listError.php" role="data" />
-   <file baseinstalldir="/" md5sum="210bd1aaa4a41e85d49e99dc0c0d2291" name="apps/pc_frontend/modules/introfriend/templates/listSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="0bc1b4da560482e8f116ff2fe9709660" name="apps/pc_frontend/modules/introfriend/templates/_introFriendList.php" role="data" />
+   <file baseinstalldir="/" md5sum="b43c496b4938856442dbb226e3f9bf4f" name="apps/pc_frontend/modules/introfriend/templates/listError.php" role="data" />
+   <file baseinstalldir="/" md5sum="0270368fac5aa764a044c0609de3ba7a" name="apps/pc_frontend/modules/introfriend/templates/listSuccess.php" role="data" />
+   <file baseinstalldir="/" md5sum="d0a6080463ba2dd097478a66af3012ee" name="apps/pc_frontend/modules/introfriend/templates/_introFriendList.php" role="data" />
    <file baseinstalldir="/" md5sum="6ec5378e103b528fa0832531eab917fb" name="apps/pc_frontend/modules/introfriend/templates/_introFriendManage.php" role="data" />
    <file baseinstalldir="/" md5sum="b727c9aa96e34cbbd17386993c241fb2" name="apps/pc_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="bba3b13deb1bd5ec2928246d510abce1" name="config/app.yml" role="data" />
    <file baseinstalldir="/" md5sum="ecde61010c4c26723842d7a7993f86ed" name="config/config.php" role="data" />
    <file baseinstalldir="/" md5sum="7da7ae53b150573905b140d665d24069" name="config/doctrine/schema.yml" role="data" />
-   <file baseinstalldir="/" md5sum="18ed7313aac7138abcccb3b05b962806" name="data/fixtures/000_revision.yml" role="data" />
+   <file baseinstalldir="/" md5sum="22c8ce5b1480f0995699e96a1b6073ea" name="data/fixtures/000_revision.yml" role="data" />
    <file baseinstalldir="/" md5sum="a005980ae9780306ef2bef2ca4ff5f13" name="data/fixtures/010_navigation.yml" role="data" />
    <file baseinstalldir="/" md5sum="a0eea5db8aebe43d06a0d1a7363eb3b8" name="data/migrations/0.9.1.1/001_update_navigation.php" role="data" />
    <file baseinstalldir="/" md5sum="379a9eb315f91890a6c865eab46932f4" name="data/migrations/0.9.1.1/002_add_index.php" role="data" />
    <file baseinstalldir="/" md5sum="20f6907cdf6e50f9c80b0c952ae61d31" name="data/migrations/0.9.2/003_delete_non_friends.php" role="data" />
+   <file baseinstalldir="/" md5sum="0a7e943ed0128c0cb936ee393af0a0ea" name="data/migrations/0.9.2/004_delete_non_members.php" role="data" />
+   <file baseinstalldir="/" md5sum="4d50de4d745e62dc83b331d54f75e109" name="data/migrations/0.9.2/005_update_constraints.php" role="data" />
    <file baseinstalldir="/" md5sum="8963e8eea62c94c08d954b1caa06b6b8" name="i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="9c69da956f2f18d6f96be4014f7e3ddf" name="lib/opIntroFriendPluginObserver.class.php" role="data" />
    <file baseinstalldir="/" md5sum="6ff29bc5b5f422a46e22c272b612c0d1" name="lib/action/opIntroFriendPluginIntroFriendActions.class.php" role="data" />
@@ -181,6 +183,21 @@ fixed migrate bug.
    <license>apache</license>
    <notes>
 fixed the some bugs
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>0.9.2.1</release>
+    <api>0.9.2.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2011-05-09</date>
+   <license>apache</license>
+   <notes>
+fixed bugs.
    </notes>
   </release>
  </changelog>
