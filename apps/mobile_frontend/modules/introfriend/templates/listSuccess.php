@@ -9,17 +9,18 @@ $list = array();
 foreach ($pager->getResults() as $i => $introFriend)
 {
   $member = $introFriend->getMember_2();
-  $list[$i] = '<p>' . __('%Nickname%') . ' :</p>'
-          . '<p>' . link_to($member->getName(), '@member_profile?id='.$member->getId()) . '</p>'
-          . '<p>' . __('Introductory essay') . ' :</p>'
-          . nl2br($introFriend->getContent());
+  $list[$i] = __('%Nickname%') . ' :<br>'
+          . link_to($member->getName(), '@member_profile?id='.$member->getId()) . '<br><br>'
+          . __('Introductory essay') . ' :<br>'
+          . nl2br($introFriend->getContent()) ;
 
   $options = array('from' => 'list');
   if ($id == $sf_user->getMemberId() || $member->getId() == $sf_user->getMemberId())
   {
+    $list[$i] .=  '<br><br>';
     if ($member->getId() == $sf_user->getMemberId())
     {
-      $list[$i] .= '<p>' . link_to(__('Edit'), 'obj_member_introfriend', $introFriend->getMember()) . '<br>';
+      $list[$i] .= '[' . link_to(__('Edit'), 'obj_member_introfriend', $introFriend->getMember()) . ']';
       $options['target'] = 'my';
       $options['sf_subject'] = $introFriend->getMember();
     }
@@ -28,7 +29,7 @@ foreach ($pager->getResults() as $i => $introFriend)
       $options['target'] = 'friend';
       $options['sf_subject'] = $introFriend->getMember_2();
     }
-    $list[$i] .= link_to(__('Delete'), 'obj_introfriend_delete', $options);
+    $list[$i] .= '[' . link_to(__('Delete'), 'obj_introfriend_delete', $options) . ']';
   }
 }
 $options = array(
