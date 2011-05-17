@@ -32,6 +32,5 @@ abstract class PluginIntroFriendForm extends BaseIntroFriendForm
 
     $this->widgetSchema->setNameFormat('intro_friend[%s]');
     $this->setValidator('content', new sfValidatorString(array('required' => true)));
-    $this->widgetSchema['content']->setAttributes(array('rows' => 8, 'cols' => 88));
   }
 }
