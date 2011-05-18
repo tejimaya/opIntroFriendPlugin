@@ -17,5 +17,6 @@ class introfriendComponents extends sfComponents
   public function executeIntroFriendList()
   {
     $this->introList = Doctrine::getTable('IntroFriend')->getComponentByTo($this->id);
+    $this->count = Doctrine::getTable('IntroFriend')->getCount($this->id);
   }
 }
