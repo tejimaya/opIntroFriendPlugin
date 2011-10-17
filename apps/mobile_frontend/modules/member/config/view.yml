@@ -6,3 +6,10 @@ profileSuccess:
       is_component: true
       target: [bottom] 
 
+homeSuccess:
+  customize:
+    noticeIntroFriendUnread:
+      template: [introfriend, noticeUnread]
+      is_component: true
+      parts:    [information]
+      target:   [bottom]

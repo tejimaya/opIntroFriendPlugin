@@ -16,3 +16,23 @@ IntroFriend:
       fields: [created_at]
     member_id_from_member_id_to:
       fields: [member_id_from, member_id_to]
+
+IntroFriendUnread:
+  columns:
+    member_id:
+      type: integer(4)
+      primary: true
+      notnull: true
+    read_at:
+      type: timestamp
+      notnull: true
+    count:
+      type: integer(4)
+      notnull: true
+      default: 0
+      unsigned: true
+  relations:
+    Member:
+      foreignType: one
+      onDelete: cascade
+      owningSide: true

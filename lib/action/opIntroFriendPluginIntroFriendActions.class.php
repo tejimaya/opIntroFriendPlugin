@@ -90,6 +90,15 @@ class opIntroFriendPluginIntroFriendActions extends sfActions
   */
   public function executeList($request)
   {
+    if ($this->id === $this->getUser()->getMemberId())
+    {
+      $introFriendUnread = Doctrine_Core::getTable('IntroFriendUnread')->findOneByMemberId($this->id);
+      if ($introFriendUnread && $introFriendUnread->getCount() > 0)
+      {
+        $introFriendUnread->doRead();
+      }
+    }
+
     $this->isFriend = $this->friendCheck();
     $this->pager = Doctrine::getTable('IntroFriend')->getListPager($this->id, $request->getParameter('page', 1));
     if (!$this->pager->getNbResults()) return sfView::ERROR;

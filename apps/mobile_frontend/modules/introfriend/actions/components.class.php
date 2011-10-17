@@ -6,7 +6,7 @@
  * @subpackage introfriend
  * @author     Masato Nagasawa <nagasawa@tejimaya.com>
  */
-class introfriendComponents extends sfComponents
+class introfriendComponents extends opIntroFriendPluginIntroFriendComponents
 {
   public function executeIntroFriendLink($request)
   {

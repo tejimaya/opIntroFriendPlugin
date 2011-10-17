@@ -69,6 +69,11 @@
         <source>The introductory essay was deleted.</source>
         <target>紹介文を削除しました。</target>
       </trans-unit>
+
+      <trans-unit id="18">
+        <source>[1]There is new introductory essay!|(1,Inf]There are %1% new introductory essays!</source>
+        <target>[1,Inf]%1%件の新着紹介文があります！</target>
+      </trans-unit>
    </body>
   </file>
 </xliff>

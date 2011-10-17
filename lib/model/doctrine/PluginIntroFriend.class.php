@@ -12,5 +12,69 @@
  */
 abstract class PluginIntroFriend extends BaseIntroFriend
 {
+ public function save(Doctrine_Connection $conn = null)
+  {
+    if (is_null($conn))
+    {
+      $conn = opDoctrineQuery::chooseConnection(true);
+    }
+    $conn->beginTransaction();
+
+    try
+    {
+      $preUpdateAt = $this->updated_at;
+      if ($this->state() === Doctrine_Record::STATE_CLEAN)
+      {
+        // force to update 'updated_at' data
+        $this->state(Doctrine_Record::STATE_DIRTY);
+      }
+      parent::save($conn);
+      $introFriendUnread = Doctrine_Core::getTable('IntroFriendUnread')->findOneByMemberId($this->member_id_to);
+      if (!$introFriendUnread)
+      {
+        $introFriendUnread = new IntroFriendUnread();
+        $introFriendUnread->setMemberId($this->member_id_to);
+        $introFriendUnread->setReadAt($this->updated_at);
+      }
+      if ($preUpdateAt <= $introFriendUnread->getReadAt())
+      {
+        $introFriendUnread->increaseCount();
+        $introFriendUnread->save($conn);
+      }
+      $conn->commit();
+    }
+    catch (Exception $e)
+    {
+      $conn->rollback();
+      throw $e;
+    }
+  }
+
+  public function delete(Doctrine_Connection $conn = null)
+  {
+    if (is_null($conn))
+    {
+      $conn = opDoctrineQuery::chooseConnection(true);
+    }
+    $conn->beginTransaction();
+
+    try
+    {
+      $introFriendUnread = Doctrine_Core::getTable('IntroFriendUnread')->findOneByMemberId($this->member_id_to);
+      if ($introFriendUnread && $this->getUpdatedAt() >= $introFriendUnread->getReadAt())
+      {
+        $introFriendUnread->decreaseCount();
+        $introFriendUnread->save($conn);
+      }
+      parent::delete($conn);
+      $conn->commit();
+    }
+    catch (Exception $e)
+    {
+      $conn->rollback();
+      throw $e;
+    }
+
+  }
 
 }
