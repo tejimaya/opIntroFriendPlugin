@@ -7,7 +7,7 @@
  * For the full copyright and license information, please view the LICENSE
  * file and the NOTICE file that were distributed with this source code.
  */
-class Revision6_addUnreadTable extends opMigration
+class Revision7_addUnreadTable extends opMigration
 {
   public function up()
   {
