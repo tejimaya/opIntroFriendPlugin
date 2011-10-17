@@ -16,6 +16,8 @@ IntroFriend:
       fields: [created_at]
     member_id_from_member_id_to:
       fields: [member_id_from, member_id_to]
+    member_id_to_updated_at:
+      fields: [member_id_to, updated_at]
 
 IntroFriendUnread:
   columns:

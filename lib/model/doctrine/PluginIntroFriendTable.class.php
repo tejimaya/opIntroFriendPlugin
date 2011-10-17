@@ -67,7 +67,7 @@ class PluginIntroFriendTable extends Doctrine_Table
   {
     return Doctrine::getTable('IntroFriend')->createQuery()
       ->where('member_id_to = ?', $memberIdTo)
-      ->orderBy('id');
+      ->orderBy('updated_at DESC');
   }
 
   /**
