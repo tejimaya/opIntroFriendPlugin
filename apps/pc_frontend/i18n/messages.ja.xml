@@ -77,6 +77,16 @@
         <source>The introductory essay was deleted.</source>
         <target>紹介文を削除しました。</target>
       </trans-unit>
+
+      <trans-unit id="19">
+        <source>Private Introductory essay</source>
+        <target>非公開紹介文</target>
+      </trans-unit>
+
+      <trans-unit id="20">
+        <source>Private&lt;br /&gt;Member</source>
+        <target>非公開&lt;br /&gt;メンバー</target>
+      </trans-unit>
     </body>
   </file>
 </xliff>
