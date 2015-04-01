@@ -19,17 +19,23 @@
   <email />
   <active>yes</active>
  </lead>
+ <lead>
+  <name>kaoru nishizoe</name>
+  <user>nishizoe</user>
+  <email />
+  <active>yes</active>
+ </lead>
  <developer>
   <name>kashiwasan</name>
   <user>kashiwasan</user>
   <email />
   <active>yes</active>
  </developer>
- <date>2011-09-21</date>
- <time>14:44:18</time>
+ <date>2015-04-01</date>
+ <time>16:55:00</time>
  <version>
-  <release>1.0.0</release>
-  <api>1.0.0</api>
+  <release>1.0.0.1</release>
+  <api>1.0.0.1</api>
  </version>
  <stability>
   <release>stable</release>
@@ -37,7 +43,7 @@
  </stability>
  <license>apache</license>
  <notes>
-fixed bugs
+version 1.0.0.1
  </notes>
  <contents>
   <dir baseinstalldir="/" name="/">
@@ -58,7 +64,7 @@ fixed bugs
    <file baseinstalldir="/" md5sum="91101e913477398f39a11de54ace2655" name="apps/mobile_frontend/modules/introfriend/templates/_introFriendManage.php" role="data" />
    <file baseinstalldir="/" md5sum="9666f06fb0018707cee9af92888a5571" name="apps/mobile_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="444d5019c85df924677f181d63313c2d" name="apps/pc_frontend/config/routing.yml" role="data" />
-   <file baseinstalldir="/" md5sum="708d4d55d450bf0617fd59682e66f668" name="apps/pc_frontend/i18n/messages.ja.xml" role="data" />
+   <file baseinstalldir="/" md5sum="2704c0cf103710374349fd02fc4f78a9" name="apps/pc_frontend/i18n/messages.ja.xml" role="data" />
    <file baseinstalldir="/" md5sum="c4da5353b95a8313969e3f94f35202b4" name="apps/pc_frontend/modules/friend/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="1076635cf8b47727918190f99d3a9846" name="apps/pc_frontend/modules/introfriend/actions/actions.class.php" role="data" />
    <file baseinstalldir="/" md5sum="9496f6fb2a4bd7a20df747580e0abb63" name="apps/pc_frontend/modules/introfriend/actions/components.class.php" role="data" />
@@ -70,7 +76,7 @@ fixed bugs
    <file baseinstalldir="/" md5sum="c545cf92365a637f8ebcc8f4c3a561eb" name="apps/pc_frontend/modules/introfriend/templates/indexSuccess.php" role="data" />
    <file baseinstalldir="/" md5sum="b43c496b4938856442dbb226e3f9bf4f" name="apps/pc_frontend/modules/introfriend/templates/listError.php" role="data" />
    <file baseinstalldir="/" md5sum="0270368fac5aa764a044c0609de3ba7a" name="apps/pc_frontend/modules/introfriend/templates/listSuccess.php" role="data" />
-   <file baseinstalldir="/" md5sum="15b4653572fd8a39be1c3463feb37b85" name="apps/pc_frontend/modules/introfriend/templates/_introFriendList.php" role="data" />
+   <file baseinstalldir="/" md5sum="77bc103f55dd438e0c855901cbf342e4" name="apps/pc_frontend/modules/introfriend/templates/_introFriendList.php" role="data" />
    <file baseinstalldir="/" md5sum="6ec5378e103b528fa0832531eab917fb" name="apps/pc_frontend/modules/introfriend/templates/_introFriendManage.php" role="data" />
    <file baseinstalldir="/" md5sum="b727c9aa96e34cbbd17386993c241fb2" name="apps/pc_frontend/modules/member/config/view.yml" role="data" />
    <file baseinstalldir="/" md5sum="bba3b13deb1bd5ec2928246d510abce1" name="config/app.yml" role="data" />
@@ -220,6 +226,21 @@ fixed bugs.
    <license>apache</license>
    <notes>
 fixed bugs
+   </notes>
+  </release>
+  <release>
+   <version>
+    <release>1.0.0.1</release>
+    <api>1.0.0.1</api>
+   </version>
+   <stability>
+    <release>stable</release>
+    <api>stable</api>
+   </stability>
+   <date>2015-04-01</date>
+   <license>apache</license>
+   <notes>
+version 1.0.0.1
    </notes>
   </release>
  </changelog>
